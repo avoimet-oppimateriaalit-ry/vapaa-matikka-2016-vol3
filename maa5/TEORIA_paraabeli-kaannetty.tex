@@ -1,0 +1,98 @@
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ muotoa $x=ay^2+by+c$ olevat paraabelit aukeavat oikealle tai vasemmalle
+}
+
+KIITOS!}
+
+%Määritelmä
+
+%FIXME Sopisiko tähän kuva jossa taval. ja vaakasuunt. paraabeleiden symmetria-akselit?
+
+Edellisissä kappaleissa käsiteltiin muotoa $y = ax^2 + b + c$ olevia paraabeleita, jotka ovat symmetrisiä pystyakselin suhteen (eli akselin oikea puoli on vasemman puolen peilikuva). Vaihtamalla paraabelin yhtälössä $x$- ja $y$-muuttujat keskenään saadaan yhtälö
+\[x=ay^2+by+c.\]
+Sen kuvaaja on joko oikealle tai vasemmalle aukeava paraabeli, jonka symmetria-akseli on vaakasuora. Kun $a>0$ paraabeli aukeaa oikealle, ja kun $a < 0$ paraabeli aukeaa vasemmalle.
+
+%FIXME Mikä on vakiintunut suomenkielinen terminologia? 
+%FIXME Tämän laatikko asettelee itsensä(?) rumasti seuraavalle sivulle, jättäen edel. sivulle ison tyhjän tilan
+%Tässä ja alla käytetty samaa "oikealle tai vasemmalla aukeava (...)" -rakennetta kuin otsikossa
+\laatikko{Yhtälö \[x=ay^2+by+c\] määrittelee paraabelin, joka aukeaa oikealle tai vasemmalle.}
+
+%FIXME mainitse kuvien paraabelit tekstissä?
+%Kuva: oikealle aukeava paraabeli
+\begin{kuva}
+    kuvaaja.pohja(-3, 4, -2, 4)
+    kuvaaja.piirraParametri("0.5*t**2 -t - 1", "t", a=-2, b=4, nimi = r"$x = \frac{1}{2}y^2  - y -1$", kohta = (0.5, 1.5))
+\end{kuva}
+
+%Kuva: vasemmalle aukeava paraabeli
+
+\begin{kuva}
+    kuvaaja.pohja(-4, 3, -4, 2)
+    kuvaaja.piirraParametri("-t**2 -2*t + 1", "t", a=-4, b=2, nimi = r"$x = -y^2 - 2y +1$", kohta = (0.3, 1.2))
+\end{kuva}
+
+%FIXME Perusesimerkki tähän
+
+%Käännettyjen(???) paraabeleiden ominaisuuksia
+
+Vasemmalle ja oikealle aukeaville paraabeleille pätevät vastaavat tulokset kuin aikaisemmin käsitellyille pystysuorille paraabeleille. Esimerkiksi vaakasuuntaisen paraabelin huippu sijaitsee aina pisteessä
+
+\[y = \frac{-b}{2a}.\]
+
+%Huippumuoto käännetylle paraabelille
+
+Myös paraabelille, jonka yhtälö on $x=ay^2+by+c$ voidaan kirjoittaa huippumuotoinen yhtälö:
+
+\laatikko{Oikealle tai vasemmalle aukeavan paraabelin huippumuotoinen yhtälö on
+\[
+x-x_0 = a(y-y_0)^2.
+\]}
+
+%FIXME Tähän tehtäväesimerkki ylläolevasta
+\begin{esimerkki}
+    Määritä sellaisen vasemmalle tai oikealle aukeavan paraabelin yhtälö, jonka huippu on samassa pisteessä kuin paraabelin $y = x^2 + 4x +1$ huippu ja myös leikkaa $y$-akselin samassa pisteessä kuin kyseinen paraabeli.
+    \begin{esimratk} % ratkaisu
+        Etsitään ensiksi paraabelin $y = x^2 + 4x +1$ huippu. Voisimme täydentää paraabelin neliöksi, mutta helpompaa on käyttää aikaisemmin johtamaamme tulosta (pystysuuntaisen) paraabelin huipun $x$-koordinaatille
+        \begin{align*}
+        x &= \frac{-b}{2a} \\
+          &= \frac{-4}{2\,\cdot\,1} = -2, \\
+        \intertext{minkä jälkeen saamme huipun $y$-koordinaatin sijoittamalla}
+        y &= x^2 + 4x +1 = (-2)^2 - 8 +1 = -3.
+        \end{align*}
+        Huipun koordinaatit ovat siis $(-2, -3)$. Tämä on myös kysytyn paraabelin huippu, joten sijoitetaan se vasemmalle tai oikealle aukeavan paraabelin huippumuotoiseen yhtälöön.
+        \begin{align*}
+        x-x_0 &= a(y-y_0)^2\\
+        x-(-2) &= a(y-(-3))^2 \\
+        x +2 &= a(y^2 +6y +9)\\
+        x &= ay^2 +6ay +9a -2
+        \end{align*}
+        Vielä on selvitettävä kerroin $a$. Tehtävänannon mukaan kysytty paraabeli leikkaa $y$-akselin samassa pisteessä kuin $y = x^2 + 4x +1$, selvitetään siis tuo piste. Tutkimalla koordinaatistoa huomataan, että $y$-akseli on itse asiassa suora $x = 0$, mikä on siten leikkauspisteen $x$-koordinaatti. Sijoittamalla tämän paraabelin yhtälöön saamme $y$-koordinaatin:
+        \begin{align*}
+        y &= x^2 + 4x +1\\
+        y &= 0 + 0 + 1 = 1
+        \end{align*}
+        Näin ollen molemmat paraabelit kulkevat pisteen $(0,1)$ kautta. Sijoittamalla tämä kysytyn paraabelin yhtälöön voimme ratkaista tuntemattoman vakion $a$ arvon.
+        \begin{align*}
+        x &= ay^2 +6ay +9a -2 && \ppalkki (x,y) = (0,1) \\
+        0 &= a +6a +9a -2 \\
+        2 = 16a \\
+        a = \frac{1}{8}\\
+        \intertext{Tästä saamme vaakasuuntaan (oikealle) aukeavan paraabelin yhtälöksi:}
+        x &= ay^2 +6ay +9a -2 \\
+        x &= \frac{1}{8}y^2 + \frac{6}{8}y + \frac{9}{8} -2  && \ppalkki \frac{9}{8} -2 = \frac{9 - 16}{8}\\
+        x &= \frac{1}{8}y^2 + \frac{3}{4}y - \frac{7}{8}
+        \end{align*}
+    \end{esimratk}
+    \begin{esimvast} % vastaus
+        Paraabelin yhtälö on $x = \frac{1}{8}y^2 + \frac{3}{4}y - \frac{7}{8}$.
+        %%%FIXME: KUVA!
+        %%https://www.wolframalpha.com/input/?i=y+%3D+x%5E2++%2B+4x++%2B1%2C+x+%3D+1%2F8%28y%5E2+%2B+6y+-7%29
+    \end{esimvast}
+\end{esimerkki}
+
+%Muita esimerkkejä?
+
+%FIXME Paraabelin yleinen muoto (johtosuora ax +by +c = 0) (kartioleikkaukset??) liitteisiin?

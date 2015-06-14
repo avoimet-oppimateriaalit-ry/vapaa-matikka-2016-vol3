@@ -1,0 +1,176 @@
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ ihan lyhyt koordinaatistokertaus
+§ kahden pisteen välinen etäisyys (pysty-tai vaakasuoraan helpolla, Pythagoraan lauseella yleensä)
+§ esimerkkejä käyrän yhtälöistä, esim. suora, paraabeli, kartesiuksen lehti
+}
+
+KIITOS!}
+
+Analyyttisen geometrian perusajatus on käsitellä geometrisia kuvioita koordinaatistossa.
+Koordinaatistossa kuvion jokainen piste voidaan ilmoittaa sen koordinaattien avulla.
+Esimerkiksi oheisessa kuvassa on kolmio $ABC$, jonka nurkkapisteiden koordinaatit ovat
+\[
+A(1, 2), \quad B(-1, -1) \quad \text{ja} \quad C(2, -2).
+\]
+
+\begin{kuva}
+    kuvaaja.pohja(-2, 3, -3, 3, korkeus = 4, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    geom.jana((1, 2), (-1, -1))
+    geom.jana((-1, -1), (2, -2))
+    geom.jana((2, -2), (1, 2))
+    kuvaaja.piste((1, 2), "$A$", 45)
+    kuvaaja.piste((-1, -1), "$B$", 180)
+    kuvaaja.piste((2, -2), "$C$", -45)
+\end{kuva}
+
+Koordinaattiakselit leikkaavat toisensa kohtisuoraan pisteessä, jota nimitetään \termi{origo}{origoksi}.
+Tuota pistettä voi ajatella koordinaatiston keskuksena.
+Vaaka-akselia on yleensä tapana nimittää $x$-akseliksi ja pystyakselia $y$-akseliksi.
+Näiden mukaan koko koordinaatistoa kutsutaan toisinaan $xy$-koordinaatistoksi.
+
+Kunkin pisteen koordinaatit määräytyvät siitä, missä kohdassa se on $x$- ja $y$-akselien asteikkoihin verrattuna.
+Aivan kuten lukusuoralla kutakin pistettä vastaa tietty reaaliluku $x$ ja päinvastoin, koordinaatistossa kutakin pistettä vastaa yksi yhteen tietty lukupari $(x, y)$.
+
+\subsection*{Pisteiden välinen etäisyys}
+
+Geometriassa tärkeää on päästä mittaamaan pituuksia.
+Tätä varten on selvitettävä, miten voidaan määrittää kahden koordinaatiston pisteen välinen etäisyys.
+Aivan kuten tavallisessa geometriassa, emme voi aina turvautua mittaamiseen; se ei vain yksinkertaisesti aina onnistu. Esim. maan ja auringon etäisyyden määrittämiseen ei pisinkään viivoitin riitä, ja betonikuution lävistäjän pituuden mittaamiseski ei voi suoraan käyttää mittanauhaa. Sen sijaan pyritään selvittämään pisteiden väliset etäisyydet niiden koordinaattien perusteella.
+
+\begin{kuva}
+    kuvaaja.pohja(-4, 3, 0, 6, korkeus = 4, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    piste((1, 2), "$A$")
+    piste((1, 5), "$B$")
+    piste((-3, 2), "$C$")
+\end{kuva}
+
+Helpointa etäisyyden määrittäminen on silloin, kun pisteet ovat samalla vaaka- tai pystysuoralla.
+Toisin sanoen niillä on sama $x$- tai $y$-koordinaatti.
+Tällöin niiden etäisyys saadaan yksinkertaisesti laskemalla toisistaan poikkeavien koordinaattien erotus.
+
+Esimerkiksi yllä olevassa kuvassa pisteiden $A(1, 2)$ ja $B(1, 5)$ välinen etäisyys on $5-2=3$.
+Toisaalta pisteiden $A(1, 2)$ ja $C(-3, 2)$ välinen etäisyys on $1-(-3)=4$.
+
+Etäisyyden tulee olla aina epänegatiivinen.
+Jos ei ole varma pisteiden järjestyksestä, voi käyttää itseisarvoja.
+Esimerkiksi edellä pisteiden $A$ ja $C$ etäisyys voidaan laskea myös järjestyksessä $|-3-1|=|-4|=4$.
+
+% \begin{esimerkki}
+% jotkin helpot etäisyydet
+% \end{esimerkki}
+
+\begin{kuva}
+    kuvaaja.pohja(-2, 5, -1, 5, korkeus = 4, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    piste((1, 2), "$A$")
+    piste((4, 3), "$B$")
+    geom.jana((1, 2), (1, 3))
+    geom.jana((1, 3), (4, 3))
+    geom.jana((4, 3), (1, 2))
+\end{kuva}
+
+Kun kahdella pisteellä on sekä eri $x$-koordinaatit että eri $y$-koordinaatit, etäisyys on määritettävä toisella tapaa.
+Nyt voidaan turvautua Pythagoraan lauseeseen ja siihen, että koordinaatisto on suorakulmainen.
+
+Edellä olevassa kuvassa pisteiden $A(1, 2)$ ja $B(4, 3)$ etäisyys saadaan piirtämällä kuvan mukainen suorakulmainen kolmio $ABC$.
+Kateetin $AC$ pituus on pisteiden $A$ ja $B$ $x$-koordinaattien erotus eli $4-1=3$.
+Kateetin $BC$ pituus on puolestaan $A$ ja $B$ $y$-koordinaattien erotus eli $3-2=1$.
+Hypotenuusan $AB$ pituus saadaan Pythagoraan lauseesta:
+\[
+|AB|=\sqrt{3^2+1^2}=\sqrt{9+1}=\sqrt{10}.
+\]
+Pisteiden $A$ ja $B$ välinen etäisyys on siis $\sqrt{10}$.
+Tätä ei olisi voinut selvittää mittaamalla.
+
+Yleisessä tapauksessa kahden pisteen välinen etäisyys saadaan seuraavasta kaavasta.
+\laatikko[Pisteiden $(x_1, y_1)$ ja $(x_2, y_2)$ välinen etäisyys.]{
+\[
+\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
+\]
+}
+
+\begin{esimerkki}
+Mitkä ovat luvun alussa olleen kolmion $ABC$ sivujen pituudet?
+
+\begin{esimratk}
+Pisteiden koordinaatit olivat $A(1, 2)$, $B(-1, -1)$ ja $C=(2, -2)$.
+Kolmion sivujen pituudet ovat sen kärkipisteiden väliset etäisyydet.
+Yllä olevaa kaavaa soveltamalla saadaan sivun $AB$ pituudeksi
+\[
+\sqrt{\bigl(1-(-1)\bigr)^2+\bigl(2-(-1)\bigr)^2}=\sqrt{2^2+3^2}=\sqrt{4+9}=\sqrt{13}.
+\]
+Sivun $AC$ pituudeksi tulee
+\[
+\sqrt{(1-2)^2+\bigl(2-(-2)\bigr)^2}=\sqrt{(-1)^2+4^2}=\sqrt{1+16}=\sqrt{17}.
+\]
+Sivun $BC$ pituudeksi tulee
+\[
+\sqrt{\bigl((-1)-2\bigr)^2+\bigl((-1)-(-2)\bigr)^2}=\sqrt{(-3)^2+1^2}=\sqrt{9+1}=\sqrt{10}.
+\]
+\end{esimratk}
+
+\begin{esimvast}
+Sivujen pituudet ovat $|AB|=\sqrt{13}$, $|AC|=\sqrt{17}$ ja $|BC|=\sqrt{10}$.
+\end{esimvast}
+\end{esimerkki}
+
+\subsection*{Käyrät ja niiden yhtälöt}
+
+Koordinaatistoon voidaan pisteiden ja janojen lisäksi piirtää myös suoria ja erilaisia käyriä.
+Esimerkiksi polynomien kuvaajia piirrettiin ja tutkittiin pitkän matematiikan kurssissa 2 ja suoriin on tutustuttu jo aiemmin.
+Yhteistä kaikille näille on se, että koordinaatistoon piirrettyä käyrää (jollaiseksi myös suora voidaan laskea) vastaa jokin yhtälö, jossa esiintyvät tuntemattomat $x$ ja $y$.
+
+Alla olevan kuvan suoraa vastaa yhtälö $y=2x-1$.
+Yhtälö tulkitaan siten, että jokaisen suoralla olevan pisteen $(x, y)$ koordinaatit toteuttavat yhtälön.
+Esimerkiksi suoran piste $(2, 3)$ toteuttaa yhtälön, sillä $3=2\cdot 2-1$.
+Toisaalta piste $(5, 2)$ ei ole suoralla, sillä $2\cdot 5-1=9\neq 2$.
+
+
+\begin{kuva}
+	kuvaaja.pohja(-4, 6, -4, 6, leveys=7)
+	kuvaaja.piirra("2*x-1", nimi="$2x-1$")
+	piste((1,1), "$(1, 1)$")
+\end{kuva}
+
+Kääntäen voidaan sanoa, että jos piste toteuttaa yhtälön $y=2x-1$, se on suoralla.
+Yhtälö siis täysin määrittää suoran pisteet.
+Etsittäessä pisteitä, jotka muodostavat suoran, riittää tutkia sen yhtälöä.
+
+Monilla tutuilla käyrillä on omat yhtälönsä.
+Alle on piirretty paraabeli, jonka yhtälö on $y=x^2-2x+1$.
+Aivan kuten suoran tapauksessa, paraabeli koostuu täsmälleen niistä pisteistä, jotka toteuttavat tämän yhtälön.
+Toisinaan sanotaan, että paraabeli on \emph{niiden pisteiden joukko, jotka toteuttavat yhtälön $y=x^2-2x+1$}.
+
+
+\begin{kuva}
+	kuvaaja.pohja(-4, 6, -3, 7, leveys=7)
+	kuvaaja.piirra("x**2-2*x+1")
+\end{kuva}
+
+Tällä kurssilla opitaan käsittelemään erityisesti suoria ja ympyröitä niiden yhtälöiden avulla.
+Ympyrän yhtälö muodostetaan vaatimuksesta, että jokainen ympyrän piste on yhtä kaukana ympyrän keskipisteestä.
+Tällöin tulee käyttöön edellä opittu kahden pisteen etäisyyden kaava.
+Esimerkiksi alla olevassa kuvassa on piirretty ympyrä, jonka yhtälö on $(x-1)^2+(y-2)^2=4$.
+
+\begin{kuva}
+	kuvaaja.pohja(-4, 6, -3, 7, leveys=7)
+	geom.ympyra((1, 2), 2, nimi="$(x-1)^2+(y-2)^2=4$")
+\end{kuva}
+
+Yllä olevasta ympyrän yhtälöstä nähdään, että käyrien yhtälöt eivät ole välttämättä muotoa $y=f(x)$.
+Toinen esimerkki on niin sanottu Cartesiuksen lehti, jonka yhtälö on $x^3+y^3-3xy=0$.
+Kartesiuksen lehti on piirretty alla olevaan kuvaan.
+
+\begin{kuva}
+	kuvaaja.pohja(-2, 3, -2, 3, leveys=7)
+	kuvaaja.piirraParametri("(3*t)/(1+t**3)", "(3*t**2)/(1+t**3)", -15, 15)
+\end{kuva}
+
+
+Esimerkiksi piste $(3/2, 3/2)$ on käyrällä, sillä
+\[
+\left(\frac{3}{2}\right)^3+\left(\frac{3}{2}\right)^3-3\cdot\frac{3}{2}\cdot\frac{3}{2}
+=\frac{27}{8}+\frac{27}{8}-\frac{27}{4}=\frac{27+27-54}{8}=0.
+\]

@@ -1,0 +1,53 @@
+Rationaalifunktio $f: \rr \backslash \{0 \} \to \rr$, $f(x) = \frac{x^2}{x}$ voidaan määrittelyjoukossaan sieventää muotoon $f(x) = x$. Entä jos $x = 0$? Lauseketta $\frac{0}{0}$ ei ole määritelty, joten funktiota ei ole mielekästä jatkaa nollassa samalla lausekkeella. Funktion kuvaaja näyttää kuitenkin suoralta.
+
+\begin{luoKuva}{raja-arvo_esimerkki}
+	kuvaaja.pohja(-2, 2, -2, 2, leveys=5)
+
+	kuvaaja.piirra("x")
+	
+	geom.ympyra((0,0), 0.04)
+	vari("white")
+	geom.ympyra((0,0), 0.015)	
+\end{luoKuva}
+
+\begin{center}
+	\naytaKuva{raja-arvo_esimerkki}
+\end{center}
+
+Itse pistettä $x = 0$ lukuun ottamatta funktio käyttäytyy siististi, ja tuntuu luontevalta määritellä, että $f(x) = 0$. $x$:n lähestyessä nollaa myös $f(x)$ näyttää lähestyvän rajatta nollaa.
+
+Lukiossa ja peruskoulussa on totuttu ns. \termi{jatkuva funktio}{jatkuviin funktioihin}, eli käytännössä funktioihin, joiden kuvaaja on katkeamaton. Jatkuvilla funktioilla on monia hyödyllisiä ominaisuuksia, mutta myös \termi{epäjatkuva funktio}{epäjatkuvat funktiot}, funktiot jotka ovat ''katkonaisia'' näyttävät käyttäytyvän toisinaan mukavasti.
+
+Esimerkin avulla huomattiin, että vaikka $f(x)$ ei ollut määritelty origossa, funktion arvot lähestyivät nollaa kummallakin puolella origoa. Tällöin sanotaan, että funktiolla on \termi{raja-arvo}{raja-arvo} jossakin pisteessä, tässä tapauksessa raja-arvo $0$ pisteessä $x=0$.
+
+Raja-arvo on erittäin tärkeä käsite matematiikassa. Intuitiivisesti sillä tarkoitetaan arvoa, jota funktion arvot lähestyvät jossain pisteessä. %Usein tutkittavan funktion arvoa voi olla vaikea analysoida, mutta pisteen lähistöllä funktio käyttäytyy mukavasti. Raja-arvo on ikään kuin tapa testata, miten funktio suhtautuu muutokseen.
+
+Miten funktio  $f: \rr \backslash \{0 \} \to \rr$, $f(x) = \frac{1}{x}$ käyttäytyy nollassa? Funktiota ei ole mielekästä jatkaa nollassa, mutta nyt luonnollista täytepistettä ei näytä löytyvän.
+
+\begin{luoKuva}{raja-arvo_esimerkki}
+    kuvaaja.pohja(-1, 10, -1, 10, leveys=5)
+    kuvaaja.piirra("1/x", nimi = "$1/x$")
+\end{luoKuva}
+
+\begin{center}
+	\naytaKuva{raja-arvo_esimerkki}
+\end{center}
+
+Kun $x$ on positiivinen ja lähestyy nollaa, funktion arvot kasvavat äärettömyyksiin. Ääretön ei kuitenkaan sovi funktion arvoksi. Toisaalta kun $x$ on negatiivinen funktion arvot näyttävät pienenevän rajatta. Tässä tapauksessa funktiolla ei ole raja-arvoa nollassa. Lauseke $\frac{1}{0}$ ei tarjoa oikeastaan paljoakaan, mutta tutkimalla funktion arvoa nollan lähellä voidaan funktiota kuvata jo aivan uudella tavalla.
+
+\section{Määritelmä}
+
+%semiformaali määritelmä
+
+\section{Esimerkkejä}
+
+% jotain hyvin epäjatkuvia funktioita
+
+\section{Raja-arvosäännöt I}
+
+\laatikko[Raja-arvosäännöt I]{
+	\begin{description}
+		\item[Summan raja-arvo] $\lim\limits_{x \to a} (f\pm g)(x) = \lim\limits_{x \to a} f(x) \pm  \lim\limits_{x \to a} g(x)$
+		\item[Vakiolla kertomisen raja-arvo] $\lim\limits_{x \to a} (cf)(x) = c \cdot \lim\limits_{x \to a} f(x)$
+	\end{description}
+}

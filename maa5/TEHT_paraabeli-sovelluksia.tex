@@ -1,0 +1,96 @@
+\begin{tehtavasivu}
+
+\subsubsection*{Opi perusteet}
+
+\begin{tehtava}
+Arkkitehti Guggenheim suunnittelee uuteen taidemuseoon kahta paraabelin muotoista holvikaarta. Holvikaarten leveys on 5 metriä ja korkeus 7 metriä, ne ovat puolen metrin päässä toisistaan ja ne ovat sijoitettu symmetrisesti (y-akseliin nähden) julkisivulle. Määritä holvikaarten yhtälöt.
+\begin{vastaus}
+%holvikaaret puoli metriä toisistaan, siis etäisyys y-akselista 0,25m.
+%Tässä ensimmäinen piste, toinen piste on 5,25m päässä, ja kolmas on (2,75; 7). %Riittää määrittää vain yksi paraabeli, ja toisen saa x_0:n vastaluvusta.
+$y-7 = -\frac{6,25}{7}(x - 2,75)^2$ ja $y-7 = -\frac{6,25}{7}(x + 2,75)^2$
+\end{vastaus}
+\end{tehtava}
+
+
+
+\subsubsection*{Hallitse kokonaisuus}
+
+\subsubsection*{Sekalaisia tehtäviä}
+
+TÄHÄN TEHTÄVIÄ SIJOITTAMISTA ODOTTAMAAN
+
+%%% Hei, ei näiden todistustehtävien tarvitse olla vaikeita! Testataan onko luettu myös ymmärretty. :D
+\begin{tehtava}
+Osoita, että jos toisen asteen yhtälöllä on kaksi nollakohtaa, sen kuvaajan paraabelin huipun $x$-koordinaatti on nollakohtien puolivälissä.
+\begin{vastaus}
+    \emph{Vihje:} Toisen asteen yhtälön ratkaisukaava.
+\end{vastaus}
+\end{tehtava}
+
+%%% Jatkoa edellisen teemaan. Tämäkin onnistuu varmaan kuinka monella tavalla.
+\begin{tehtava}
+Osoita miksi paraabeli $y = ax^2 +bx +c$ on symmetrinen huippunsa kautta kulkevan $y$-akselin suuntaisen suoran suhteen.
+\begin{vastaus}
+    \emph{Vihje:} Edelleen, toisen asteen yhtälön ratkaisukaava.
+\end{vastaus}
+\end{tehtava}
+
+%%% Helppoa intuitiota funktion ääriarvopisteiden etsimiseen
+\begin{tehtava}
+Usein huomataan, että halutaan tietää missä pisteessä jokin funktio saa pienimmän tai suurimman arvonsa.
+
+Onko seuraavilla funktioilla suurinta tai pienintä arvoa? Jos on, mikä se on, ja millä $x$:n arvolla se saavutetaan?
+\alakohdat{
+    § $f(x) = 4x^2 - 8x + 8$
+    § $f(x) = -x^2 - 3x - 1$
+    § $f(x) = (x-2)(x-3)$
+}
+
+Kurssilla MAA??? (derivaattakurssi?) tutustutaan tarkemmin funktion ääriarvojen (pieninten ja suurinten arvojen) etsimiseen, erityisesti myös silloin kun funktio ei ole toisen asteen polynomi.
+	\begin{vastaus}
+	\alakohdat{
+	    § Pienin arvo $4$ pisteessä $x = 1$ (funktion kuvaaja on ylöspäin aukeava paraabeli).
+	    § Suurin arvo $\frac{5}{4}$ pisteessä $\frac{-3}{2}$.
+	    § Pienin arvo $\frac{-1}{4}$ pisteessä $\frac{5}{2}$.
+	}
+	\end{vastaus}
+\end{tehtava}
+
+%%%Jatkona edelliseen, tähän pari soveltavampaa 'geometrista' ääriarvotehtävää jossa funktio toista astetta
+
+%%%Ei tämäkään välttämättä vaikea:
+\begin{tehtava}
+Käytettävissä on 100 tulitikkua, joista jokainen on 4~cm pitkä, ja niistä halutaan muodostaa pinta-alaltaan mahdollisimman suuria kuvioita. Tikkuja saa katkaista mistä kohtaa tahansa.
+\alakohdat{
+    § Kuinka suuren alan peittää tikuista rajattu mahdollisimman suuri suorakulmio, ja mitkä ovat sen sivujen pituudet?
+    § Muuten sama kuin edellä, paitsi että tikuista rajataan kaksi samankokoista suorakulmioita joilla on yksi yhteinen tikuista tehty sivu, ja halutaan suorakulmioiden yhteispinta-ala mahdollisimman suureksi?
+    § Sama kuin (b), paitsi että suorakulmioiden ei tarvitse olla samankokoisia.
+}
+	\begin{vastaus}
+	\alakohdat{
+	    %%%Saattaa huomata ilman laskemistakin että suurin ala on neliöllä. 
+	    %%%Lisäksi huomattava ettei kysytty alaa tikkuina!
+        § Neliö, jonka sivun pituus 100~cm ja pinta-ala 1~m$^2$
+        %%%Ei kovin vaikea edellisen sovellus, kunhan huomaa millaista kuviota tarkoitetaan.
+        § Kummankin lyhyempi sivu 50~cm ja pitempi sivu $66\frac{2}{3}$~cm$^2$. Yhteispinta-ala $\frac{2}{3}$~m$^2$.
+        %%%Kompa. Sillä missä kohtaa sijaitsee suuren suorakulmion kahdeksi jakava sivu ei ole merkitystä pinta-alan tai sivujen yhteispituuksien kannalta!
+        § Sama kuin edellisessä.
+    }
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+Paraabelin ja suoran välinen etäisyys lyhyimmän mahdollisen paraabelia ja suoraa yhdistävä janan pituus. Määritä paraabelin $y = x^2$ etäisyys suorasta $y-x+1 = 0$.
+\begin{vastaus}
+	$\frac{3}{4\sqrt{2}}$. Vinkki: Mikä on pisteen $(x_0, x_0^2)$ etäisyys suorasta? Miten lauseke 
+minimoidaan (kts. edelliset tehtävät)?
+\end{vastaus}
+\end{tehtava}
+
+%%%Hieman vaikeampi muunnos edellisestä olisi jos tikkujen katkaisemista rajoitetaan...?
+
+%%%Sitten lukion fysiikkaan liittyviä tehtäviä:
+%%%*Putoavan kappaleen sijainti
+%%%*Tykinkuulan/pallon/tjsp heitto/lento(/...)rata
+
+\end{tehtavasivu}

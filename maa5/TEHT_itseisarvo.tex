@@ -1,0 +1,204 @@
+\begin{tehtavasivu}
+
+TÄHÄN TEHTÄVIÄ SIJOITTAMISTA ODOTTAMAAN
+
+\begin{tehtava}
+	Esitä lauseke ilman itseisarvomerkkejä.
+	\alakohdat{
+		§ $|\pi-2^2|$
+		§ $|2x-6|$
+		§ $x+|6-3x|$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $-(\pi-4)=-\pi+4=4-\pi$
+			§ $\begin{cases}
+					-2x+6, & \jos x<3 \\
+					2x-6, & \jos x \geq 3
+				\end{cases}$
+			§ $\begin{cases}
+					x+(6-3x), & \jos 6-3x \geq0 \\
+					x-(6-3x), & \jos 6-3x <0 
+				\end{cases}
+				=\begin{cases}
+					x+6-3x, & \jos -3x \geq-6 \\
+					x-6+3x, & \jos -3x <-6 
+				\end{cases}
+				=\begin{cases}
+					-2x+6, & \jos x \leq2 \\
+					4x-6, & \jos x >2 
+				\end{cases}$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Esitä lauseke ilman itseisarvomerkkejä.
+	\alakohdat{
+		§ $2x-x|2-x|$
+		§ $|x^2+3|$
+		§ $|x^2-4|$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $\begin{cases}
+					x^2, & \jos x \leq2 \\
+					-x^2+4x, & \jos x>2 
+				\end{cases}$
+			§ $x^2+3$
+			§ $\begin{cases}
+					x^2-4, & \jos x \leq -2 \tai x \geq 2 \\
+					-x^2+4, & \jos -2<x<2 
+				\end{cases}$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Esitä lauseke ilman itseisarvomerkkejä.
+	\alakohdat{
+		§ $(x-1)|4x^2+4x+1|$
+		§ $|-3x^2+4x-2|$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $4x^3-3x-1$
+			§ $3x^2-4x+2$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Esitä lauseke ilman itseisarvomerkkejä.
+	\alakohdat{
+		§ $3|9-x^2|-2|x^2-9|$, kun $x\leq-3$
+		§ $\dfrac{|-x^2+4x+5|}{|x^2-5x|}$, kun $x>5$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x^2-9$ (vinkki: vastalukujen itseisarvot ovat yhtä suuret)
+			§ $\frac{x+1}{x}$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Ratkaise yhtälö.
+	\alakohdat{
+		§ $|x-2|=2$
+		§ $|3x|=4$
+		§ $|5x+7|=0$
+		§ $|-4x+2|+1=0$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x=0$ tai $x=4$
+			§ $x=\frac{4}{3}$ tai $x=-\frac{4}{3}$
+			§ $x=-\frac{7}{5}$
+			§ ei ratkaisuja
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Ratkaise yhtälö.
+	\alakohdat{
+		§ $|x-2|=|3x|$
+		§ $|3x|=|5x+7|$
+		§ $|5x+6|=|5x+4|$
+		§ $|-2x+2|=|x^2+2x+6|$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x=-1$ tai $x=\frac{1}{2}$
+			§ $x=-\frac{7}{2}$ tai $x=-\frac{7}{8}$
+			§ $x=1$
+			§ $x=-2$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Ratkaise yhtälö.
+	\alakohdat{
+		§ $|-x| = |2x|$
+		§ $|3x+1|= |7x-3|$
+		§ $x^2+4|x|+4 = |x|^2+3|-x|+7$
+		§ $|3x|+2 = |-2x|+1$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x = 0$
+			§ $x = 1$ tai $x = \frac{1}{5}$
+			§ $x = \pm 3$
+			§ Ei ratkaisuja.
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Ratkaise
+	\alakohdat{
+		§ $|x| = x^2$
+		§ $3(|x|-1) = x^2-1$
+		§ $2x^2+|x|-1 = 0$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x = 0$ tai $x = \pm 1$
+			§ $x = \pm 1$ tai $x = \pm 2$
+			§ $x = \pm \frac{1}{2}$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Maksimi $\max$ on kahden muuttujan funktio, joka liittää lukuihin niistä suuremman, siis
+	\[
+		\max(x,y) = \begin{cases}
+		x, & \kun x \geq y \\
+		y, & \kun x < y
+		\end{cases}.
+	\]
+	Todista, että
+	\[
+		|x| = \max(x,-x)
+	\]
+
+	ja että
+	\[
+		\max(x,y) = \frac{x+y+|x-y|}{2}.
+	\]
+	\begin{vastaus}
+		Käy eri tapaukset läpi.
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Ratkaise yhtälö $|x+a| = |x|+|a|$ vapaan parametrin $a$ funktiona.
+	\begin{vastaus}
+		$x \in \rr$, jos $a=0$. $x>0$, jos $a>0$. $x<0$, jos $a<0$.
+	\end{vastaus}
+\end{tehtava}
+
+\begin{tehtava}
+	Itseisarvoyhtälöt voidaan ratkaista usein kätevästi neliöön korottamalla, vaikka yhtälön molemmat puolet eivät olisikaan välttämättä positiivisia. Tällöin on kuitenkin huomattava, että yhtälönratkaisun päättelyketjua ei voida suoraan suorittaa toiseen suuntaan: lopun ratkaisukandidaatit eivät välttämättä ole yhtälön ratkaisuja, mutta ne ovat ainoita mahdollisia, jolloin tarkistamalla ne yhtälö on ratkaistu. 
+
+	Aina neliöminen ei kuitenkaan ole kannattavaa: neliöiminen saattaa johtaa identtisesti toteen yhtälöön/äärettömän moneen ratkaisukandidaattiin, joista ei välttämättä ole hyötyä alkuperäisen yhtälön ratkaisussa.
+
+	Ratkaise yhtälöt.
+	\alakohdat{
+		§ $|x+1|-|2x-1| = x$
+		§ $||2x-1|-|3x-2|| = x+1$
+		§ $||2x-1|-|3x-2|| = x-1$
+	}
+	\begin{vastaus}
+		\alakohdat{
+			§ $x = 0$ tai $x = 1$
+			§ $x = 0$
+			§ $x \geq 1$
+		}
+	\end{vastaus}
+\end{tehtava}
+
+\end{tehtavasivu}

@@ -1,0 +1,208 @@
+% motivaatio, fysikaalinen
+% sääntöjen todistamista
+% aikaderivaatat, Newtonin notaatio
+
+Monilla sovellusaloilla ollaan toisinaan kiinnostuneita siitä, kuinka nopeasti jokin kasvaa.
+Esimerkiksi fysiikassa nopeuden muutosta mittaa suure kiihtyvyys. Taloustieteessä voidaan olla
+kiinnostuneita vaikkapa kokonaisverokertymän kehityksestä suhteessa erilaisiin talouskehityksen mittareihin.
+
+Niin fysiikan kuin taloustieteenkin mallit nojaavat matemaattiseen perustaan.
+Tilanteista tehdään malleja, jotka sisältävät vapaita parametreja ja funktioita.
+
+Isaac Newtonin ja Gottfried Wilhelm Leibnizin pioneerityö johti 1600-luvulla
+matemaattisen analyysin syntyyn ja antoi työkalut funktioiden kasvunopeuden selvittämiseen.
+Kasvunopeus selvitetään matematiikassa \termi{derivointi}{derivointina} tunnetulla operaatiolla.
+
+\section{Derivaatta}
+
+Funktion $f(x)$ \termi{derivaatta}{derivaattaa} pisteessä $a$ merkitään $f'(a)$.
+Formaalisti derivaatta määritellään
+\[ f'(a) = \lim\limits_{x \to a} \frac{f(x)-f(a)}{x-a} \]
+tai yhtäpitävästi
+\[ f'(a) = \lim\limits_{h \to 0} \frac{f(a+h)-f(a)}{h}. \]
+Tämä määritelmä tunnetaan nimellä \termi{erotusosamäärän raja-arvo}{erotusosamäärän raja-arvo}.
+
+\begin{luoKuva}{derivaatta_esimerkki}
+    kuvaaja.pohja(-5, 5, -1, 8, leveys=7)
+    
+    kuvaaja.piirra("x**2")
+    
+    vari("blue")
+    kuvaaja.piirra("4*x-4")
+   
+    vari("red")
+    kuvaaja.piste((2, 4))
+\end{luoKuva}
+
+\begin{esimerkki}
+	Laske funktion $f(x) = x^2$ derivaatta pisteessä $2$.
+	\begin{esimratk}
+		\begin{align*}
+			f'(3) &= \lim\limits_{x \to 2} \frac{f(x)-f(2)}{x-2} \\
+				  &= \lim\limits_{x \to 2} \frac{x^2-4}{x-2} \\
+				  &= \lim\limits_{x \to 2} (x+2) \\
+				  &= 4
+		\end{align*}
+	\end{esimratk}
+	
+	\begin{center}
+		\naytaKuva{derivaatta_esimerkki}
+	\end{center}
+	
+\end{esimerkki}
+
+Funktion $f(x)$ derivaatalle pisteessä $a$ on geometrinen tulkinta:
+$f'(a)$ on funktion $f(x)$ tangentin kulmakerroin pisteessä $a$.
+
+\section{Derivaattafunktio}
+
+On mielekästä yleistää pisteittäin määriteltyä derivaatan käsitettä.
+Luonnollinen yleistys on \termi{derivaattafunktio}{derivaattafunktio}.
+
+Funktion $f(x)$ derivaattafunktio $f'(x)$ on sellainen funktio, jolle pätee
+\[ f'(x) = \lim\limits_{h \to 0} \frac{f(x+h)-f(x)}{h} \]
+kaikilla funktion $f(x)$ määrittelyjoukon alkioilla $x$.
+
+Funktiolla ei välttämättä ole derivaattafunktiota; tällöin sanomme, että funktio
+ei ole \termi{derivoituvuus}{derivoituva}. Jos funktio on derivoituva, sen
+derivaattafunktio on yksikäsitteinen.
+
+\section{Derivointisäännöt I}
+
+\laatikko[Derivointisäännöt I]{
+	\begin{description}
+		\item[Summan derivaatta] $(f+g)'(x) = (f'+g')(x)$
+		\item[Erotuksen derivaatta] $(f-g)'(x) = (f'-g')(x)$
+		\item[Vakiolla kertomisen derivaatta] $(cf)'(x) = cf'(x)$
+	\end{description}
+}
+
+Derivointi on niin kutsuttu lineaarinen operaattori: derivaatta summasta on summa derivaatoista ja
+vakiolla kertominen voidaan suorittaa derivoimisen ulkopuolella.
+
+\section{Derivointisäännöt II}
+
+Sitä vastoin tulon ja osamäärän derivointisäännöt ovat astetta monimutkaisempia.
+
+\laatikko[Derivointisäännöt II]{
+	\begin{description}
+		\item[Tulon derivaatta] $(fg)'(x) = (f'g+fg')(x)$
+		\item[Osamäärän derivaatta] $(\frac{f}{g})'(x) = (\frac{f'g-fg'}{g^2})(x)$
+	\end{description}
+}
+
+\begin{esimerkki}
+	Todista tulon derivointisääntö $(fg)'(x) = (f'g+fg')(x)$.
+	\begin{esimratk}
+		\begin{align*}
+			(fg)'(x) &= \lim\limits_{h \to 0} \frac{(fg)(x+h)-(fg)(x)}{h} \\
+					 &= \lim\limits_{h \to 0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h} \\
+					 &= \lim\limits_{h \to 0} \frac{f(x+h)g(x+h)+f(x+h)g(x)-f(x+h)g(x)-f(x)g(x)}{h} \\
+					 &= \lim\limits_{h \to 0} (\frac{f(x+h)-f(x)}{h} g(x) + f(x+h) \frac{g(x+h)-g(x)}{h}) \\
+					 &= f'(x)g(x) + f(x)g'(x) \\
+					 &= (f'g)(x) + (fg')(x) \\
+					 &= (f'g + fg')(x)
+		\end{align*}
+	\end{esimratk}
+\end{esimerkki}
+
+\section{Potenssifunktion derivaatta}
+
+\laatikko[Potenssifunktion derivaatta]{
+	$\diff{x^n} = nx^{n-1}$
+}
+
+\begin{esimerkki}
+	Todista potenssifunktion derivointisääntö $\diff{x^n} = nx^{n-1}$.
+	\begin{esimratk}
+		Todistetaan väite induktiolla.
+		\begin{description}
+			\item[Alkuaskel, $n=0$] \hfill \\
+			Kyseessä on vakiofunktio. Havaitaan helposti, että tällöin derivaattafunktio on identtisesti nolla.
+			\item[Induktio-oletus, $n=k\geq0$] \hfill \\
+			$\diff{x^k} = kx^{k-1}$.
+			\item[Induktioaskel, $n=k+1$] \hfill \\
+			$\diff{x^{k+1}} = \diff{x \cdot x^k} = 1 \cdot x^k + x \cdot kx^{k-1} = (k+1)x^k$. Väite on todistettu.
+		\end{description}
+	\end{esimratk}
+\end{esimerkki}
+
+Potenssifunktioita on helppo derivoida, joten myös polynomi- ja rationaalifunktioita on helppo derivoida.
+Myöhemmillä kursseilla opitaan derivoimaan muitakin funktioita.
+
+Derivoida voidaan useiden muuttujien suhteen. Tällöin kaikkia muita muuttujia kohdellaan vakioina.
+Derivoinnin muuttuja jätetään usein merkitsemättä, jos se on asiayhteydestä selvä.
+
+\begin{esimerkki}
+	Derivoi $f(x,y,z)=x^2+xy$ muuttujan
+	\alakohdat{
+		§ $x$
+		§ $y$
+		§ $z$
+	}
+	suhteen. % toisaalta notaatio doo_1, doo_2, doo_3 jne. on myös aika kiva
+	\begin{esimvast}
+		\alakohdat{
+			§ $2x+y$
+			§ $x$
+			§ $0$
+		}
+	\end{esimvast}
+\end{esimerkki}
+
+\section{Ääriarvojen määrittäminen}
+
+Derivaattaa käyttäen voidaan ratkaista monia yksinkertaisia optimointitehtäviä.
+Tätä motivoi ''ääriarvolause.''
+
+\laatikko[''Ääriarvolause'']{
+	Avoimella välillä derivoituva funktio voi saavuttaa
+	lokaalin maksimin tai minimin vain sen derivaattafunktion nollakohdissa.
+}
+
+Lokaali ääriarvo on maksimi, jos toinen derivaatta pisteessä on negatiivinen ja minimi, jos
+toinen derivaatta pisteessä on positiivinen. Jos toinen derivaatta on $0$, ääriarvo voi olla
+maksimi, minimi tai ns. satulapiste.
+
+\begin{esimerkki}
+	Määritä funktion $f(x)=x^3-3x$ lokaalit maksimit ja minimit välillä $\aavali{0}{10}$.
+	\begin{esimratk}
+		Derivaattafunktioksi saadaan $f'(x)=3x^2-3$.
+		\begin{align*}
+			f'(x) &= 0 \\
+			3x^2-3 &= 0 \\
+			3x^2 &= 3 \\
+			x^2 &= 1 \\
+			x &= \pm 1
+		\end{align*}
+		Derivaattafunktion nollakohdista vain $x = 1$ sijaitsee välillä $\aavali{0}{10}$.
+		Pisteessä $x = 1$ funktio saa arvon $f(1) = -2$. Toinen derivaatta on $f''(x)=6x$,
+		joka saa pisteessä $x = 1$ positiivisen arvon. Siis funktiolla on lokaali minimi $-2$
+		pisteessä $1$.
+	\end{esimratk}
+	\begin{esimvast}
+		$f(1) = -2$, lokaali minimi
+	\end{esimvast}
+\end{esimerkki}
+
+\begin{esimerkki}
+	Pyöräilijän nopeutta yksikössä $\mathrm{\frac{m}{s}}$ mallinnetaan funktiolla % huonosti valittu malli, funktio ei fluktuoi
+	\[ v(t) = -0,0000013 t^2 + 0,0052 t + 4,3, \]
+	missä $t$ on aika lähdöstä sekunteina. Millä ajanhetkellä pyöräilijä saavuttaa suurimman nopeutensa, ja mikä se on?
+	\begin{esimratk}
+		Derivoimalla saadaan $a(t) = \dot{v}(t) = -0,0000026 t + 0,0052$.
+		\begin{align*}
+			a(t) &= 0 \\
+			-0,0000026 t + 0,0052 &= 0 \\
+			-0,0000026 t &= -0,0052 \\
+			t &= 2000
+		\end{align*}
+		Sijoittamalla saadaan $v(2000) = 9,5$.
+		Vaihdetaan yksiköt:
+		\[ 2000 \; \mathrm{s} = 33 \; \mathrm{min} \; 20 \; \mathrm{s} \]
+		\[ 9,5 \; \mathrm{\frac{m}{s}} =  34,2 \; \mathrm{\frac{km}{h}} \]
+	\end{esimratk}
+	\begin{esimvast}
+		Pyöräilijä saavuttaa suurimman nopeutensa $34,2 \; \mathrm{\frac{km}{h}}$ ajettuaan $33 \; \mathrm{min} \; 20 \; \mathrm{s}$.
+	\end{esimvast}
+\end{esimerkki}

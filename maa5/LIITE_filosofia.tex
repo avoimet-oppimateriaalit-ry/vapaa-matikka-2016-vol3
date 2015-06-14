@@ -1,0 +1,42 @@
+Analyyttinen geometria tarkastelee geometrisiä ongelmia matemaattisen analyysin ja algebran keinoin karteesisessa koordinaatistossa. Sen perusongelmia ovat kuvioiden ja kappaleiden yhtälöt, tasoleikkaukset, etäisyydet ja muodot.
+
+Lukion pitkän matematiikan kurssilla MAA4 Analyyttinen geometria käydään läpi näitä ongelmia monipuolisesti. Oppikirja on rakennettu siten, että aiheet esitellään lukujen alussa ja havainnollistetaan esimerkein. Tehtäviä on runsaasti ja niiden tarkoituksena on saada opiskelija sisäistämään opiskellut asiat ja siirtämään ne käytäntöön.
+
+Tässä kirjassa käsittelemme opetussuunnitelman mukaiset keskeiset sisällöt, joita ovat
+\luettelo{
+§ pistejoukon yhtälö
+§ suoran, ympyrän ja paraabelin yhtälöt
+§ itseisarvoyhtälön ja epäyhtälön ratkaiseminen
+§ yhtälöryhmän ratkaiseminen
+§ pisteen etäisyys suorasta
+}
+
+Opetussuunnitelman mukaiset kurssin keskeiset tavoitteet ovat, että opiskelija
+\luettelo{
+§ ymmärtää kuinka analyyttinen geometria luo yhteyksiä geometristen ja algebrallisten
+käsitteiden välille 
+§ ymmärtää pistejoukon yhtälön käsitteen ja oppii tutkimaan yhtälöiden avulla pisteitä,
+suoria, ympyröitä ja paraabeleja 
+§ syventää itseisarvokäsitteen ymmärtämystään ja oppii ratkaisemaan sellaisia itseisarvoyhtälöitä ja vastaavia epäyhtälöitä, jotka ovat tyyppiä $|f(x)|=a$ tai $|f(x)|=|g(x)|$
+§ vahvistaa yhtälöryhmän ratkaisemisen taitojaan
+}
+
+\subsection*{Taustaa}
+
+% ajatuksia analyyttisen geometrian taustoista, vähän hämärää, mutta jotain pointteja olis ainakin kiva saada esille
+
+Analyyttinen geometria on silta geometrian ja algebran välillä. Klassisessa geometriassa kuvioita käsitellään kokonaisuuksina, tasossa oleskelevina olioina, mutta miltä maailma näyttää, jos jokainen kuvio jaetaan pisteisiin, ja jokaista pistettä ajatellaan yksilönä? Analyyttinen geometria lähtee ajatuksesta antaa jokaiselle tason pisteelle nimi, koordinaatti.
+
+\subsection*{Pisteiden nimeäminen}
+
+Miten nimeäminen pitäisi hoitaa? Yhtä oikeaa tapaa ei ole, mutta yksi luonnollisimmista on varmaankin käyttää tuttuja reaalilukuja. Osoittautuu, että jos tasoa alkaa nimeämään suoraan reaaliluvuilla, lopputulos ei ole kovin mielekäs. Reaaliluvuilla on suuruusjärjestys, mutta tason pisteille sellaista on suoraan vaikea mieltää. Tasossa voi kuitenkin ajatella suuruusjärjestyksen pysty- ja vaakasuunnassa, mistä saadaan idea nimetä pisteitä kahdella luvulla, reaalilukuparilla. Reaalilukuparia, pisteen koordinaatteja, merkitään yleensä muodossa $(x,y)$, missä $x$ ja $y$ ovat siis reaalilukuja. Ensimmäistä lukua/koordinaattia kutsutaan yleensä $x$-koordinaatiksi ja toista lukua/koordinaattia $y$-koordinaatiksi, mutta nimet vaihtelevat sen mukaan, miten nimet on sijoitettu tasoon.
+
+Miten nimeäminen pitäisi hoitaa? Edelleen, tyylejä on monia, mutta seuraava vaatimus tuottaa melko mukavia tuloksia: pisteillä toinen koordinaateista on sama, jos ja vain jos pisteet ovat samalla suoralla. Nyt tasosta voisi aluksi valita suoran, jonka pisteet nimetä koordinaateilla $(x,0)$, missä $x$ on siis mielivaltainen reaaliluku. Tämä tehtiin jo MAA1 kurssilla; lukusuoran pisteet samaistettiin reaalilukujen kanssa. Tätä suoraa kutsutaan usein $x$-akseliksi. Entäs pisteet muotoa $(0,y)$, missä $y$ on mielivaltainen reaaliluku. Ne ovat suoralla, joka leikkaa $x$-akselin pisteessä $(0,0)$, mutta joka ei ole $x$-akseli. Tätä toista suoraa kutsutaan vastaavasti $y$-akseliksi, ja leikkauspistettä origoksi.
+
+Nyt jokaiselle nimelle paikka on jo oikeastaan määrätty. Piste $(a,b)$ on suoralla, jolla on pisteet muotoa $(a,x)$. Tämä suora on joko $y$-akseli tai ei leikkaa sitä, eli on sen suuntainen, ja kulkee pisteen $(a,0)$ kautta. Samoin se on $x$-akselin suuntaisella suoralla, joka kulkee pisteen $(0,b)$ kautta. Koska syntyvät suorat eivät ole samat, leikkauspisteitä on yksi, eli paikka on yksikäsitteinen.
+
+Vielä on päätettävänä akselien välinen kulma. Jälleen vaihtoehtoja on monia, mutta koordinaateille ja Pythagoraan lauseelle saa kätevän yhteyden valitsemalla kulma suoraksi. Näin olemme päätyneet karteesiseen koordinaatistoon.
+
+\subsection*{Geometriasta algebraan}
+
+Kun tason pisteet on nimetty, voi pistejoukkoja alkaa käsitellä eri tavalla. Tasokuviot voi ajatella kokoelmana pisteitä, jotka vastaavat kokoelmaa koordinaatteja, pistepareja. Kuuluminen tasokuvioon voidaan nyt ilmaista toisin: pistepari toteuttaa yhtälön.

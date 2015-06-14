@@ -1,0 +1,137 @@
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ miten ratkaistaan epäyhtälöitä tyyliin
+§ $|x|<a$,  $|x|>a$
+§ $|f(x)|<a$, $|f(x)|<|g(x)|$, $|f(x)|<g(x)$
+}
+
+KIITOS!}
+
+Itseisarvoepäyhtälön ratkaiseminen riippuu hyvin paljon epäyhtälön muodosta. Helpointa on hahmotella kutakin tilannetta erikseen lukusuoran avulla ja yrittää palauttaa itseisarvoepäyhtälö yhdeksi tai useammaksi tavalliseksi epäyhtälöksi. Teoriassa kaikki itseisarvoepäyhtälöt voidaan ratkaista tarkastelemalla itseisarvoissa olevien lausekkeiden merkkejä eri väleillä. Tutustutaan erilaisiin tilanteisiin esimerkkien avulla.
+
+\begin{esimerkki}
+Ratkaise epäyhtälö $|x|<3$.
+
+\begin{esimratk}
+On löydettävä kaikki sellaiset luvut, joiden itseisarvo on pienempi kuin $3$. Esimerkiksi luvut $2$ ja $-1$ käyvät, mutta luvut $4$ ja $-5,5$ eivät käy. Epäyhtälön ratkaisuja ovat täsmälleen ne luvut, joiden etäisyys nollasta on pienempi kuin $3$.
+
+(Tähän kuva.)
+
+Siten ratkaisu on $-3<x<3$.
+\end{esimratk}
+
+\begin{esimvast}
+$-3<x<3$.
+\end{esimvast}
+
+\end{esimerkki}
+
+\begin{esimerkki}
+Ratkaise epäyhtälö $|x|>5$.
+
+\begin{esimratk}
+On löydettävä kaikki sellaiset luvut, joiden itseisarvo on suurempi kuin $5$. Esimerkiksi luvut $2$ ja $-4,5$ eivät ole epäyhtälön ratkaisuja, mutta luvut $5,5$ ja $-6$ ovat. Epäyhtälön ratkaisuja ovat täsmälleen ne luvut, joiden etäisyys nollasta on suurempi kuin $5$.
+ 
+(Tähän kuva.)
+
+Nyt ratkaisu on ilmoitettava kahdessa osassa: $x<-5$ tai $x>5$.
+\end{esimratk}
+
+\begin{esimvast}
+$x<-5$ tai $x>5$
+\end{esimvast}
+\end{esimerkki}
+
+\begin{esimerkki}
+Ratkaise epäyhtälö $|x+4|<2$.
+
+\begin{esimratk}
+Nyt luvun $x+4$ itseisarvo on pienempi kuin kaksi, joten aikaisemman esimerkin perusteella tiedetään, että $-2<x+4<2$. Näin saadaan ratkaistaviksi epäyhtälöt $-2<x+4$ ja $x+4<2$. Ratkaistaan nämä kaksi epäyhtälöä erikseen:
+\begin{align*}
+-2&<x+4 & \ppalkki{+2} \\
+0&<x+6 & \ppalkki{-6} \\
+-6&<x &
+\end{align*}
+ja
+\begin{align*}
+x+4&<2 & \ppalkki{-4} \\
+x&<-2 & \ppalkki{-6}
+\end{align*}
+
+Kun vastaukset yhdistetään, saadaan ratkaisuksi $-6<x<-2$.
+
+(Tähän kuva.)
+
+\end{esimratk}
+
+\begin{esimvast}
+$-6<x<-2$.
+\end{esimvast}
+\end{esimerkki}
+
+Itseisarvoepäyhtälöiden ratkaisu voidaan usein myös palauttaa jo tuttuihin tekijätarkasteluihin, kun huomataan, että
+
+\begin{align*}
+|a| \geq |b| \Leftrightarrow a^2 \geq b^2 \Leftrightarrow (a-b)(a+b) \geq 0
+\end{align*}
+
+\begin{esimerkki} Ratkaise epäyhtälö $|2x-1|>|x+2|$.
+
+\begin{esimratk} \textbf{(Tapa 1)} Koska molemmat puolet ovat epänegatiivisia, itseisarvomerkit voitaisiin poistaa korottamalla epäyhtälö puolittain 		toiseen potenssiin. Mutta miten käy epäyhtälön merkille? Jos kaksi epänegatiivista lukua korotetaan toiseen potenssiin, niiden keskinäinen järjestys säilyy. Voimme siis korottaa tehtävän epäyhtälön puolittain toiseen potenssiin, ja epäyhtälömerkin suunta säilyy. Päättely voidaan suorittaa myös toiseen suuntaan: Jos vasemman puolen neliö on oikean puolen neliötä suurempi, on myös itselausekkeen oltava itseisarvoltaan suurempi. Tämän jälkeen epäyhtälöä käsitellään toisen asteen epäyhtälönä.
+
+\begin{align*}
+|2x-1|^2 & >|x+2|^2 \\
+(2x-1)^2 & >(x+2)^2 \\
+4x^2-4x+1 & >x^2+4x+4 \\
+3x^2-8x-3 & >0
+\end{align*}
+
+Toisen asteen epäyhtälö ratkaistaan etsimällä lausekkeen nollakohdat ja päättelemällä merkkikaavion tai kuvaajan avulla, millä alueilla epäyhtälö toteutuu.
+\begin{align*}
+3x^2-8x-3 & =0 \\
+x & =\frac{8\pm\sqrt{8^2-4\cdot3\cdot(-3)}}{2\cdot 3} \\
+x & =\frac{8\pm\sqrt{64+36}}{6} \\
+x & =\frac{8\pm 10}{6} \\
+x=3 \quad & \text{tai} \quad x=-\frac{1}{3}
+\end{align*}
+
+\begin{merkkikaavio}{2}
+	\merkkikaavioKohta{$-1/3$}
+	\merkkikaavioKohta{$3$}
+
+	\merkkikaavioFunktio{$3x²-8x-3$}
+	\merkkikaavioMerkki{$+$}
+	\merkkikaavioMerkki{$-$}
+	\merkkikaavioMerkki{$+$}
+
+\end{merkkikaavio}
+% isompi kuva rikkoo asiat jos x ja y skaala liian suuri(LaTeX stack overflow), ping Sharph () 
+\begin{kuva}
+  kuvaaja.pohja(-2, 4,  -9, 5, korkeus = 5, leveys = 5, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+  kuvaaja.piirra("3*x**2-8*x-3")
+\end{kuva}
+
+Epäyhtälö toteutuu lausekkeen $3x^2-8x-3$ nollakohtien välisen alueen ulkopuolella eli silloin, kun $x<-\dfrac{1}{3}$ tai $x>3$.
+\end{esimratk}
+
+\begin{esimvast}
+$x<-\dfrac{1}{3}$ tai $x>3$.
+\end{esimvast}
+
+\begin{esimratk} \textbf{(Tapa 2)}
+Niin kuin havaittiin,
+\begin{align*}
+|2x-1| > |x+2| \Leftrightarrow (2x-1)^2 > (x+2)^2 \Leftrightarrow ((2x-1)-(x+2))((2x-1)+(x+2)) > 0
+\end{align*}
+eli
+\begin{align*}
+(x-3)(3x+1)>0.
+\end{align*}
+Tekijöiden nollakohdat ovat tietenkin $x = 3$ ja $x = -\frac{1}{3}$. Nyt voidaan jatkaa merkkikaaviolla niin kuin ensimmäisessä ratkaisussa.
+\end{esimratk}
+\begin{esimvast}
+$x<-\dfrac{1}{3}$ tai $x>3$.
+\end{esimvast}
+\end{esimerkki}

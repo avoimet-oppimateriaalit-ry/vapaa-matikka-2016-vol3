@@ -1,0 +1,184 @@
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ TEHTY pisteen etäisyyden suorasta laskeminen yhdenmuotoisilla
+kolmioilla
+§ TEHTY pisteen etäisyys suorasta -kaava: $d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$
+§ sovelluksia
+§ kaavan todistuksen voi laittaa tähän osioon tai liitteeksi,
+käytetään yhdenmuotoisia kolmioita. TODISTUS ON (muttei kolmioilla)
+}
+
+KIITOS!}
+
+Pisteen etäisyydellä suorasta tarkoitetaan pisteen ja mielivaltaisen suoran pisteen pienintä mahdollista etäisyyttä.
+Jos tunnetaan jokin vaaka- tai pystysuora suora ja jokin koordinaatiston piste, kyseisen pisteen etäisyys annetusta suorasta on helppo määrittää.
+
+\begin{minipage}{0.45\textwidth}
+\begin{kuva}
+    kuvaaja.pohja(-2, 3, -1, 5, korkeus = 4, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    with palautin():
+        vari("lightgray")
+        kuvaaja.piirraParametri("1.7", "t", a = 1, b = 3.3)
+    kuvaaja.piirra("1", nimi = "$y=1$", suunta = 0)
+    kuvaaja.piste((1.7, 3.3), "$(1,7; 3,3)$", 95)
+\end{kuva}
+
+Etäisyys on $3,3-1=2,3$.
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{kuva}
+    kuvaaja.pohja(-2, 3, -1, 5, korkeus = 4, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    with palautin():
+        vari("lightgray")
+        kuvaaja.piirraParametri("t", "3.3", a = -1, b = 1.7)
+    kuvaaja.piirraParametri("-1", "t", a = -1, b = 5, nimi = "$x = -1$", suunta = 90)
+    kuvaaja.piste((1.7, 3.3), "$(1,7; 3,3)$", 90)
+\end{kuva}
+
+Etäisyys on $1,7-(-1)=2,7$.
+\end{minipage}
+
+Jos suora on kalteva, etäisyyden määrittäminen ei ole näin suoraviivaisesti.
+Seuraavaksi tutustutaan erääseen tapaan tämän pulman ratkaisemiseksi.
+
+\subsection*{Pisteen etäisyys suorasta yhdenmuotoisten kolmioiden avulla}
+
+Tarkastellaan esimerkkinä suoraa $l$, jonka normaalimuotoinen yhtälö on $3x-4y -12=0$.
+Selvitetään pisteen $P=(8, 5)$ etäisyys suorasta $l$.
+
+\begin{kuva}
+    kuvaaja.pohja(-1, 10, -4, 5, nimiX = "$x$", nimiY = "$y$", ruudukko = True)
+    with palautin():
+        vari("lightgray")
+        kuvaaja.piirraParametri("8+0.75*t", "5-t", a = 0, b = 1.28)
+    kuvaaja.piirra(".75*x-3", nimi = "$l$", kohta = 2, suunta = -45)    
+    kuvaaja.piste((8,5), "$P$", -135)
+    kuvaaja.piste((8.96, 3.72), "$Q$", -45)
+\end{kuva}
+
+%    kuvaaja.piirra(".75*x-3", nimi = "$3x -4y- 12=0$", kohta = 2, suunta = -45)    
+
+Nähdään, että pienin mahdollinen etäisyys pisteestä suoralle on sellaisen janan $PQ$ pituus, joka kulkee pisteestä $P$ suoralle $l$ siten, että se on kohtisuorassa suoraan $l$ nähden. (Mikäli tämä ei tunnu itsestään selvältä, voit havainnoillistaa tilannetta esimerkiksi piirtämällä ympyrän, jonka keskipiste on $P$ ja joka sivuaa suoraa $l$ tarkalleen yhdessä pisteessä $Q$.)
+
+Tehtävä ratkeaa, kun huomataan, että valitsemalla janan $PQ$ lisäksi suoralta sopivan kolmannen pisteen $R$ saadaan kolmio, joka on yhdenmuotoinen suoran $l$ ja koordinaattiakselien rajaaman kolmion kanssa. Alla on tilanteesta kuva:
+
+%%%[EI OLE VALMIS, KUVIA JA TEKSTISELITYSTÄ VOISI VIELÄ MIETTIÄ]
+%%%FIXME: (^Koskien yo:) tekstiä hieman uusiksi (pyritty avaamaan päättelyä), voisiko silti tätä vielä hioa?
+%%%Lisäksi korjattu alla todistuksessa sekaisin menneet OA/OB. (Kuvastahan näkee että OA =4!) -aa-m-sa
+
+%    kuvaaja.pohja(-1, 10, -4, 5)
+\begin{kuva}\\
+    kuvaaja.pohja(-1, 10, -4, 5, ruudukko = False)
+    kuvaaja.piirra(".75*x-3", a = -1, b = 10)
+    kuvaaja.piirraParametri("0", "t", a = -3, b = 0)
+    kuvaaja.piirraParametri("t", "0", a = 0, b = 4)
+    kuvaaja.piirraParametri("8", "t", a = 3, b = 5)
+    kuvaaja.piirraParametri("8+0.75*t", "5-t", a = 0, b = 1.28)
+    kuvaaja.piste((8,5), "$P$", 180)
+    kuvaaja.piste((4,0), "$A$", -45)
+    kuvaaja.piste((0,-3), "$B$", -45)
+    kuvaaja.piste((0,0), "$O$", 135)
+    kuvaaja.piste((8.96, 3.72), "$Q$", -45)
+    kuvaaja.piste((8,3), "$R$", -45)
+\end{kuva}
+
+Haluamamme etäisyys on suoralle $l$ piirretty normaali $PQ$. Piste $R$ on suoralla $l$ siten, että $PR$ on $y$-akselin suuntainen. $A$ ja $B$ ovat suoran $l$ ja $x$- ja $y$-akselin leikkauspisteet ja $O$ on origo.
+
+Kolmiot $ABO$ ja $PRQ$ ovat yhdenmuotoisia, sillä molemmat ovat suorakulmaisia ja lisäksi kulmat $ABO$ ja $PRQ$ ovat samankohtaisina yhtä suuret. Koska kolmiot ovat yhdenmuotoiset, saadaan verranto
+\begin{align*}
+\frac{PQ}{PR} &=\frac{OA}{AB}\\
+\intertext{josta saadaan etäisyydelle PQ yhtälö}
+PQ &=\frac{OA}{AB}\cdot PR.
+\end{align*}
+
+Kolmion $OAB$ sivut $OA$ ja $AB$ selviävät, kun ratkaistaan, missä pisteissä suora leikkaa $x$- ja $y$-akselit.
+Asettamalla suoran yhtälössä $x=0$ saadaan
+\[
+3x-4\cdot 0=12, \quad \text{josta} \quad x=\frac{12}{3}=4.
+\]
+Pisteen $A$ koordinaatit ovat siis $(4, 0)$. Toisaalta kun $x=0$, saadaan
+\[
+3\cdot 0-4\cdot y=12, \quad \text{josta} \quad y=-\frac{12}{4}=-3.
+\]
+Pisteen $B$ koordinaatit ovat siis $(0, -3)$. Koska piste $O$ on origo $(0,0),$ tunnetaan nyt sivut $OA=4$ ja $OB=3$. Sivu $AB$ saadaan Pythagoraan lauseen perusteella
+\[
+AB=\sqrt{OA^2+OB^2}=\sqrt{4^2+3^2}=\sqrt{25}=5.
+\]
+
+Enää on selvitettävä sivu $PR$. Tämä on sama kuin pisteiden $P$ ja $R$ välinen etäisyys.
+
+Pisteen $R$ $x$-koordinaatti on sama kuin pisteen $P$, eli 8. Koska $R$ on suoralla $l$, sen $y$-koordinaatti saadaan suoran yhtälöstä:
+\begin{align*}
+3\cdot 8-4y & =12 \\
+-4y & =12-3\cdot 8 \\
+-4y & =-12 \\
+y & =3. \\
+\end{align*}
+Nyt siis $R=(8, 3)$. Pisteiden $P$ ja $R$ välinen etäisyys on siis $5-3=2$, ja tämä on sivun $PR$ pituus.
+
+Kun verrannosta saatuun yhtälöön sijoitetaan tunnetut sivujen pituudet, saadaan
+\begin{align*}
+PQ &=\frac{OA}{AB}\cdot PR  && \ppalkki OA= 4, AB=5, PR= 2\\
+PQ & =\frac{4\cdot 2}{5} = \frac{8}{5}.
+\end{align*}
+Siispä pisteen $P$ etäisyys suorasta $l$ on $\dfrac{8}{5}$.
+
+Tässä valittu piste $R$ ei suinkaan ollut ainoa vaihtoehto. Minkä (tai mitkä?) muun pisteen olisi voinut valita?
+
+\subsection*{Pisteen etäisyys suorasta kaavan avulla}
+
+Pisteen etäisyydelle suorasta johtaa myös yleinen kaava, jonka käyttö voi olla joskus edellä esitettyä yhdenmuotoisten kolmioiden menetelmän soveltamista helpompaa. Kaavan voi johtaa esimerkiksi yhdenmuotoisilla kolmioilla tai suoraan analyyttisesti (ks. harjoitustehtävät ja liite). Kolmas, vektoreihin perustuva todistus esitetään kurssilla MAA5 Vektorit.
+
+Jos suoran yhtälö on annettu normaalimuodossa $ax+by+c=0$ ja pisteen koordinaatit ovat $(x_0, y_0)$, etäisyys $d$ saadaan seuraavasta kaavasta.
+\laatikko[Pisteen etäisyys suorasta]{
+\[
+d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+\]
+}
+
+%%% Kaavan johtamiset: 
+%%%  * yhdenmuotoisilla kolmioilla harjoitustehtäväksi (esimerkki ja muutamat vihjeet riittänevät)
+%%%  * analyyttinen todistus suht' teknistä pyörittelyä, liitteeseen (kuten aiemmin kommenteissa ehdotettu todistusta tästä liitteeseen)
+
+\begin{esimerkki} Lasketaan aiemman esimerkin pisteen $P=(8, 5)$ etäisyys suorasta $l$, jonka normaalimuotoinen yhtälö on $3x-4y-12=0$.
+\begin{esimratk}
+Käytetään kaavaa, jolloin $a=3$, $b=-4$ ja $c=12$, sekä $x_0=8$ ja $y_0=5$. Kaavan mukaan etäisyys on
+\[
+d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+=\frac{|3\cdot 8-4\cdot 5-12|}{\sqrt{3^2+(-4)^2}}
+=\frac{|24-20-12|}{\sqrt{9+16}}=\frac{|-8|}{\sqrt{25}}
+=\frac{8}{5}.
+\]
+\end{esimratk}
+\begin{esimvast}
+Etäisyys on $\dfrac{8}{5}$.
+\end{esimvast}
+\end{esimerkki}
+
+\begin{esimerkki} Etsitään ne pisteet, joiden $x$-koordinaatti on 6 ja joiden etäisyys suorasta $-6x+8y+3=0$.
+\begin{esimratk}
+Piste, jonka $x$-koordinaatti on 6, on muotoa $(6, y)$. Sijoitetaan tämä etäisyyden kaavaan ja sievennetään.
+Nyt $A=-6$, $B=8$, $C=3$, $x_0=6$ ja $y_0=y$.
+\[
+d=\frac{|-6\cdot 6+8y+3|}{\sqrt{(-6)^2+8^2}}
+=\frac{|-36+8y+3|}{\sqrt{36+64}}
+=\frac{|8y-33|}{\sqrt{100}}
+=\frac{|8y-33|}{10}.
+\]
+Tehtävänannon mukaan etäisyyden pitäisi olla $d=6$. Tästä saadaan yhtälö
+\[
+\frac{|8y-33|}{10}=6 \quad \text{eli} \quad |8y-33|=60.
+\]
+Tämä itseisarvoyhtälö ratkeaa jakautumalla kahteen tapaukseen:
+\begin{align*}
+8y-33 & =60 & &\text{tai} & 8y-33 & =-60 \\
+8y & =99 & & & 8y & =-27 \\
+y & =\frac{99}{8} & & & y & =-\frac{27}{8}.
+\end{align*}
+\end{esimratk}
+\begin{esimvast}
+Pisteet ovat $\bigl(6, \frac{99}{8}\bigr)$ ja $\bigl(6, -\frac{27}{8}\bigr)$.
+\end{esimvast}
+\end{esimerkki}

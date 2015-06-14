@@ -1,0 +1,99 @@
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ TEHTY paraabelin huippu on kohdassa $x=-b/2a$, todistus
+§ (Jo edellisessä kappaleessa? Vai pitäisikö siirtää tähän?) paraabelin yhtälön huippumuoto $y-y_0=a(x-x_0)^2$
+§ TEHTY paraabelin yhtälön ratkaiseminen kolmen pisteen avulla
+§ soveltavia tehtäviä, ne iänikuiset holvikaaret jne.
+}
+KIITOS!}
+
+\subsection*{Paraabelin huipun sijainti}
+Joissain tehtävissä hyödylliseksi osoittautuu tulos, että paraabelin $y = ax^2 +b +c$ huipun $(x_0, y_0)$ $x$-koordinaatti on aina
+\[x_0 = - \frac{b}{2a}\]
+ja $y$-koordinaatti
+\[y_0 = c - \frac{b^2}{4a}.\]
+
+%%% FIXME MAA2:n liitteistä toteamus että x= \frac{-b}{2a} on neliön minimi tjsp tähän?
+
+Huipun sijainnin kohdassa $x = - \frac{b}{2a}$ voi osoittaa tutkimalla paraabelin määräävän polynomifunktion ääriarvoja funktion derivaatan avulla; derivaattaan tutustutaan kurssilla MAA7. Saman tuloksen näkee myös paraabelin yhtälön huippumuodon $y - y_0 = a(x- x_0)^2$ ja normaalimuodon $y = ax^2 +bx +c$ yhtäpitävyydestä. Palautetaan edellisestä kappaleesta mieleen, että huippumuodon saattaa kirjoittaa auki
+
+\begin{align*}
+y-y_0 &= a(x-x_0)^2 \\
+y-y_0 &= a(x^2 - 2x_0x + x_0^2) \\
+y &= ax^2 - 2ax_0 x + ax_0^2 +y_0.
+\end{align*}
+Nyt
+\[ax^2 - 2ax_0 x + ax_0^2 +y_0 = ax^2 +bx +c\]
+kun $b = -2ax_0$ ja $c = ax_0^2 +y_0$, ja siis
+\[x_0 = -\frac{b}{2a}\]
+ja sijoittamalla tämä saadaan myös $y_0$
+\begin{align*}
+y_0 &= c - ax_0^2 = c -a\left(-\frac{b}{2a}\right)^2 \\
+&= c - \frac{ab^2}{4a^2} \\
+&= c - \frac{b^2}{4a}.
+\end{align*}
+
+\subsection*{Paraabelin yhtälön ratkaiseminen kolmen pisteen avulla}
+
+\begin{esimerkki}
+	Paraabeli kulkee pisteiden $(0,1)$, $(2,0)$ ja $(4,1)$ kautta. Muodosta paraabelin yhtälö.
+	
+	\begin{esimratk} 
+		Jokainen annettu piste toteuttaa saman paraabelin yhtälön $y - y_0 = k(x-x_0)^2$. Näin ollen kannattaa sijoittaa kunkin pisteen koordinaatit paraabelin yhtälöön ja muodostaa kolmen pisteen muodostamista yhtälöistä yhtälöryhmä:
+		\[
+		\left\{
+		\begin{aligned}
+		1 - y_0 = k(0 - x_0)^2 \\
+		0 - y_0 = k(2 - x_0)^2 \\
+		1 - y_0 = k(4 - x_0)^2
+		\end{aligned}
+		\right.
+		\]
+
+		Yhtälöryhmä ratkaistaan samalla lailla kuten aiemminkin:
+		
+		Esimerkiksi voidaan ratkaista $y_0$ ensimmäisestä yhtälöstä ja sijoittaa se kolmanteen.
+
+\begin{align*}
+	1 - y_0 &= k(0 - x_0)^2 &&\ppalkki \text{1. yhtälö}\\
+	y_0 &= 1- kx^2_0	 \\
+    \intertext{Sijoitetaan tämä kolmanteen:}
+	1-y_0 &= k(4-x_0)^2 &&\ppalkki \text{Avataan binomin neliö} \\
+	1-y_0 &= k(16 - 8x_0 + x_0^2) &&\ppalkki \text{ja sijoitetaan }y_0 \\
+	1-1+kx^2_0 &= 16k - 8kx_0 + x^2_0 &&\ppalkki -kx^2_0 \\
+	-8kx_0 + 16k &= 0 &&\ppalkki \cdot \, \frac{1}{8k}, \, k \neq 0 \\
+	x_0 &= 2 \\
+	y_0 &= 1- kx^2_0 = 1 - 4k	
+\end{align*}	
+
+		 Sijoitetaan saadut $x_0$:n ja $y_0$:n arvot keskimmäiseen yhtälöön.
+
+\begin{align*}	
+	0 - y_0 &= k(2 - x_0)^2 \\
+	0 - (1 - 4k) &= k(2-2)^2 \\
+	4k -1 &= 0 \\
+	k &= \frac{1}{4} \\
+	y_0 &= -k(2 - x_0)^2 = - \frac{1}{4} \cdot 0 = 0
+\end{align*}
+
+		Sijoitetaan lopulliset arvot paraabelin yhtälöön:
+
+\begin{align*}	
+    y - y_0 &= k(x-x_0)^2 \\
+	y - 0 &= \frac{1}{4}(x-2)^2 \\
+	y &= \frac{1}{4}(x^2-4x+4) \\
+	y &= \frac{1}{4}x^2 - x + 1
+\end{align*}
+
+
+		\begin{esimvast}
+			$y=\frac{1}{4}x^2 - x + 1$
+			
+			Aivan yhtä hyvin voitaisiin käyttää myös yhtälöä $ax^2 + bx +c$.
+		\end{esimvast}
+
+
+	\end{esimratk}
+\end{esimerkki}

@@ -1,0 +1,114 @@
+\termi{rationaalifunktio}{Rationaalifunktioiksi} kutsutaan funktioita, jotka voidaan esittää kahden
+polynomifunktion osamääränä.
+
+\laatikko{
+\[f(x)=\frac{P(x)}{Q(x)}\],
+missä $P(x)$ ja $Q(x)$ ovat polynomifunktioita.
+}
+
+Koska $P(x)$ ja $Q(x)$ ovat polynomifunktioita, ne on määritelty kaikilla reaaliluvuilla. Tästä seuraa, että
+rationaalifunktio $f(x)$ on määritelty kaikilla $x$:n reaaliarvoilla $Q$:n nollakohtia lukuunottamatta. $f(x)$ ei
+ole määritelty, kun $Q(x)=0$, koska jakolaskussa nimittäjä ei voi olla nolla.
+
+\begin{esimerkki}
+	Rationaalifunktioita ovat esimerkiksi
+	\luettelo{
+		§ $x^2 = \frac{x^2}{1}$, joka on määritelty, kun $x\in\rr$.
+		§ $\frac1x$, joka on määritelty, kun $x\in\rr\setminus\left\{0\right\}$.
+		§ $1+\frac2x+\frac1{x^2} = \frac{x^2+2x+1}{x^2}$, joka on määritelty, kun $x\in\rr\setminus\left\{0\right\}$.
+		§ $\frac{x+1}{x-1}$, joka on määritelty, kun $x\in\rr\setminus\left\{1\right\}$.
+	}
+\end{esimerkki}
+
+Kaikki polynomit ovat määritelmän nojalla rationaalifunktioita. Lisäksi kahden rationaalifunktion summa, tulo, erotus ja osamäärä ovat aina rationaalifunktioita.
+
+\section{Sieventäminen}
+
+Rationaalilausekkeiden sieventäminen täytyy osata hyvin rationaaliyhtälöiden ja -epäyhtälöiden
+ratkaisemiseksi.
+
+\begin{esimerkki}
+	Sievennä $2x^2 + \frac{4x}{x+1} + \frac{x^3}{x^2+2}$.
+	\begin{esimratk}
+		\begin{align*}
+			  &2x^2 + \frac{4x}{x+1} + \frac{x^3}{x^2+2} \\
+			= &\frac{2x^2 \cdot (x+1) \cdot (x^2+2)}{(x+1) \cdot (x^2+2)} + \frac{4x \cdot (x^2+2)}{(x+1) \cdot (x^2+2)} + \frac{x^3 \cdot (x+1)}{(x+1) \cdot (x^2+2)} \\
+			= &\frac{2x^5 + 2x^4 + 4x^3 + 4x^2}{x^3+x^2+2x+2} + \frac{4x^3+8x}{x^3+x^2+2x+2} + \frac{x^4+x^3}{x^3+x^2+2x+2} \\
+			= &\frac{2x^5+3x^4+9x^3+4x^2+8x}{x^3+x^2+2x+2}
+		\end{align*}
+	\end{esimratk}
+\end{esimerkki}
+
+% jokin esimerkki jossa vielä lopuksi saadaan jaettua tekijöihin
+
+\section{Rationaaliyhtälöt}
+
+Haluttaessa määrittää rationaalifunktion nollakohdat päädytään \termi{rationaaliyhtälö}{rationaaliyhtälöihin}.
+
+\begin{esimerkki}
+	Ratkaise yhtälöt
+	\alakohdat{
+		§ $\frac{2x+12}{x} = 8$
+		§ $\frac{2x+12}{x} = 2$
+		§ $\frac{2x+12}{x} = -4$
+	}
+	\begin{esimratk}
+		Ratkaistaan yleinen tapaus $\frac{2x+12}{x} = c$, missä $c \in \rr$.
+		Todetaan ensin, että $x = 0$ ei voi olla yhtälön ratkaisu. Muulloin:
+		\begin{align*}
+			\frac{2x+12}{x} &= c \\
+			2x+12 &= cx \\
+			(2-c)x+12 &= 0 \\
+			(2-c)x &= -12 \\
+			x &= \frac{-12}{2-c} \\
+			x &= \frac{12}{c-2}
+		\end{align*}
+		Havaitaan, että kun $c = 2$, ratkaisuja ei ole. Muut ratkaisut saadaan sijoittamalla.
+	\end{esimratk}
+	\begin{esimvast}
+		\alakohdat{
+			§ $x = 2$
+			§ ei ratkaisuja
+			§ $x = -2$
+		}
+	\end{esimvast}
+\end{esimerkki}
+
+\section{Rationaaliepäyhtälöt}
+
+\begin{esimerkki}
+	Ratkaise epäyhtälöt
+	\alakohdat{
+		§ $\frac{2x+7}{x+10} < 1$
+		§ $\frac{2x+7}{x+10} > -1$
+		§ $|\frac{2x+7}{x+10}| < 1$.
+	}
+	\begin{esimratk}
+		\begin{alakohdat}
+			§
+				\begin{align*}
+					\frac{2x+7}{x+10} &< 1 \\
+					\frac{2x+7-x-10}{x+10} &< 0 \\
+					\frac{x-3}{x+10} &< 0
+				\end{align*}
+				$(x-3)$ ja $(x+10)$ ovat erimerkkisiä, kun $-10 < x < 3$.
+			§
+				\begin{align*}
+					\frac{2x+7}{x+10} &> -1 \\
+					\frac{2x+7+x+10}{x+10} &> 0 \\
+					\frac{3x+17}{x+10} &> 0
+				\end{align*}
+				$(3x+17)$ ja $(x+10)$ ovat samanmerkkisiä, kun $x < -10 \;\tai x > \frac{-17}3$.
+			§
+				Itseisarvoepäyhtälö toteutuu, kun molemmat edellä olleet epäyhtälöt toteutuvat,
+				eli kun $\frac{-17}{3} < x < 3$.
+		\end{alakohdat}
+	\end{esimratk}
+	\begin{esimvast}
+		\alakohdat{
+			§ $-10 < x < 3$
+			§ $x < -10 \;\tai x > \frac{-17}3$
+			§ $\frac{-17}{3} < x < 3$
+		}
+	\end{esimvast}
+\end{esimerkki}

@@ -1,0 +1,434 @@
+Joissakin tilanteissa ratkaistavana on useampi tuntematon. Kuitenkin yhdestä yhtälöstä voi ratkaista korkeintaan yhden tuntemattoman kerrallaan, joten ratkaistaessa kahta tuntematonta tarvitaan kaksi yhtälöä. Yleisesti:
+
+\laatikko[Useita tuntemattomia ja yhtälöitä]{Jos ratkaistaan $n$ tuntematonta, tähän tarvitaan vähintään $n$ toisistaan riippumatonta yhtälöä.}
+
+Jos halutaan esimerkiksi selvittää, mitkä luvut $x$ ja $y$ toteuttavat sekä yhtälön $2x=y+5$ ja toisaalta 
+myös yhtälön $x-10=4y+2$, ratkaistaan nämä molemmat niin sanottuna \termi{yhtälöpari}{yhtälöparina}. Yleensä samanaikaisesti ratkottavat yhtälöt merkitään allekain seuraavasti:
+$$\left\{    
+    \begin{array}{rcl}
+        2x&=&y+5 \\
+        x-10&=&4y+2 \\
+    \end{array}
+    \right.$$
+    
+Yleisemmin puhutaan \termi{yhtälöryhmä}{yhtälöryhmistä}, ja tavallisesti ratkaistaan \termi{lineaarinen yhtälöryhmä}{lineaarisia yhtälöryhmiä}, joissa yhtälön lausekkeet ovat ensimmäisen asteen polynomeja.
+
+\laatikko{
+KIRJOITA TÄHÄN LUKUUN
+
+\luettelo{
+§ mikä yhtälöryhmä on
+§ miten ratkaistaan yhtälöpari (sijoitus, yhteenlaskumenetelmä)
+§ että ratkaisuja voi olla yksi, nolla tai äärettömän monta
+§ miten useamman tuntemattoman yhtälöryhmä ratkaistaan
+}
+
+KIITOS!}
+
+\subsection*{Johdanto: Lineaarinen yhtälö}
+
+Kursseilla MAA1 ja MAA2 on tutustuttu ensimmäisen 
+\[ax +b = 0\]
+ja toisen asteen yhtälöihin
+\[ax^2 + bx +c = 0,\]
+jotka molemmat ovat yhden muuttujan ($x$) yhtälöitä.
+
+Edellä olemme käsitelleet suoran yhtälöä
+\[ax + by + c = 0,\]
+joka on kahden muuttujan, $x$:n ja $y$:n, yhtälö, jossa termit ovat ensimmäistä astetta ($ax, by$) tai vakioita ($c$).
+
+Yleisesti tällaisiä yhtälöitä, joissa termit eivät ole ensimmäistä astetta suurempia kutsutaan \termi{lineaarinen yhtälö}{lineaariksi yhtälöiksi}.
+
+\laatikko{
+  \termi{lineaarinen yhtälö}{Lineaarisessa yhtälössä} kukin termi on korkeintaan ensimmäistä astetta. 
+  \begin{samepage}
+    Esimerkiksi
+    \[ax + b = 0,\]
+    \[ax + bx + c = 0\]
+    ja
+    \[ax + by + cz + d = 0\]
+    ovat lineaarisia yhtälöitä.
+  \end{samepage}
+}
+
+\subsection*{Yhtälöryhmä}
+
+\termi{yhtälöryhmä}{Yhtälöryhmällä} tarkoitetaan useaa yhtälöä, joiden täytyy
+päteä samanaikaisesti. \footnote{Englannin kielessä yhtälöryhmästä käytetäänkin usein nimeä 
+  \emph{simultaneous equations} eli samanaikaiset yhtälöt.
+  Termi \emph{system of equations} on tosin vähintäänkin yhtä yleinen.}
+Yhtälöryhmän ratkaisujen tulee siis toteuttaa kaikki ryhmän yhtälöt; ratkaisuja ei välttämättä ole.
+
+Tässä luvussa käsitellään yhtälöryhmiä, joissa kaikki yhtälöt ovat \emph{lineaarisia}. 
+Tällaisia yhtälöryhmiä kutsutaan \termi{lineaarinen yhtälöryhmä}{lineaarisiksi yhtälöryhmiksi}.
+
+Esimerkiksi
+\[
+\left\{
+\begin{aligned}
+3x-2y-z&= -5 \\
+5x+6y+5z&= 1 \\
+-x+5y&= 0.
+\end{aligned}
+\right.
+\]
+on lineaarinen yhtälöryhmä. 
+
+%Lisäksi myöhemmin kirjassa käsitellään muutamia erikoistapauksia toisen asteen yhtälöryhmistä
+%ratkaistaessa kahden ympyrän tai ympyrän ja suoran leikkauspisteitä.
+% re ^:
+%  Ympyrä-kappaleessa implisiittisesti? onko menetelmät jos esitelty siellä, kyllä? 
+%  Jos kyllä, harkittava pitäisikö sitten siinä kohdin mainita 'ratkaistaan \termi{epälineaarinen yhtälöryhmä} blah blah...'
+%  Vai oma, erillinen kappale, tyyliin 'Luku n. Joitain epälineaarisia yhtälöryhmiä', vaikkapa lisämateriaaliksi?
+
+\subsection*{Yhtälöpari}
+
+Yksinkertaisin mielekäs yhtälöryhmä on \termi{lineaarinen yhtälöpari}{lineaarinen yhtälöpari}. Lineaarisessa yhtälöparissa on kaksi ensimmäistä astetta olevaa yhtälöä. Tällä kurssilla yhtälöparilla tarkoitetaan useimmiten kahden muuttujan lineaarista yhtälöparia.
+
+Lineaarinen yhtälöpari voidaan esittää monella tapaa. Tässä kirjassa käytämme pääasiallisesti muotoa, jossa kumpikin yhtälö on normaalimuodossa.
+
+\laatikko[Kahden muuttujan yhtälöparin normaalimuoto]{
+\begin{samepage}
+  \[
+    \left\{
+      \begin{aligned}
+      a_1x+b_1y+c_1 &= 0 \\
+      a_2x+b_2y+c_2 &= 0,
+      \end{aligned}
+    \right.
+  \]
+missä $a_1, a_2, b_1, b_2, c_1, c_2 \in \rr$
+\end{samepage}}
+
+Kahden muuttujan lineaarisen yhtälöparin ratkaisu on lukupari $(x, y)$, joka toteuttaa molemmat yhtälöt.
+
+Lineaarisia yhtälöpareja ratkotaan lukiomatematiikassa pääasiallisesti kahdella menetelmällä. Nämä menetelmät ovat \termi{sijoitusmenetelmä}{sijoitusmenetelmä} ja \termi{yhteenlaskumenetelmä}{yhteenlaskumenetelmä}. Sijoitusmenetelmä on yleinen, aina toimiva ratkaisumenetelmä.Yhtälöparista ratkaistaan jommasta kummasta yhtälöstä erikseen toinen tuntematon ja sijoitetaan saatu ratkaisu toiseen yhtälöön, jolloin yksi \termi{tuntemattoman eliminointi}{tuntematon eliminoituu} eli poistuu, jolloin ongelma yksinkertaistuu yhden tuntemattoman ratkaisuksi.
+
+\begin{esimerkki}
+Ratkaise yhtälöpari
+\[
+\left\{
+\begin{aligned}
+3x-2y&= 1 \\
+-x+5y&= 2.
+\end{aligned}
+\right.
+\]
+\begin{esimratk}
+On löydettävä kaikki ne luvut $x$ ja $y$ jotka toteuttavat molemmat yhtälöt.
+
+Käytetään \termi{sijoitusmenetelmä}{sijoitusmenetelmää}. Ratkaistaan tuntematon $x$ alemmasta yhtälöstä ja sijoitetaan se ylempään yhtälöön. Alemmasta yhtälöstä $-x+5y= 2$ saadaan $x=5y-2$. Sijoitetaan tämä ylempään yhtälöön $3x-2y=1$:
+\begin{align*}
+3x-2y&=1 && \ppalkki \text{Sijoitetaan $x=5y-2$.} \\
+3(5y-2)-2y&=1 && \\
+15y-6-2y&=1 && \\
+13y&=7 && \\
+y&=\frac{13}{7} && \\
+\end{align*}
+Sijoitetaan $y=13/7$ alempaan yhtälöön, jotta voidaan ratkaista $x$:
+\begin{align*}
+-x+5y&= 2 && \ppalkki \text{Sijoitetaan $y=\frac{13}{7}$.} \\
+-x+\frac{65}{7}&= 2 && \\
+-x&= -\frac{51}{7}&& \\
+x&= \frac{51}{7}&&
+\end{align*}
+\end{esimratk}
+\begin{esimvast}
+Yhtälön ratkaisu on $x= 51/7$, $y=13/7$.
+\end{esimvast}
+\end{esimerkki}
+
+\begin{esimerkki}
+Ratkaise yhtälöpari $2x=y+5$; $x-10=4y+2$. Ratkaistaan molemmista yhtälöistä muuttuja $x$. 
+	
+	\begin{align*}
+	    2x &= y+5 \\
+	    x &= \frac{y+5}{2}
+	\end{align*}
+	\begin{align*}
+	    x-10 &= 4y+2 \\
+	    x &= 4y+12
+	\end{align*}
+	
+Nyt yhtäsuuruusrelaation transitiivisuuden perusteella, koska $\frac{y+5}{2}=x$ ja toisaalta $x=4y+12$, saadaan yhtälö $\frac{y+5}{2}=4y+12$, joka osataan ratkaista.
+
+\begin{align*}
+	\frac{y+5}{2} &= 4y+12 \\
+	y+5 &= 2(4y+12)\\
+	y+5 &= 8y+24 \\
+	y -8y&= 24-5 \\
+	-7y &= 19 \\
+	y=-\frac{19}{7}
+\end{align*}
+
+Nyt saatu $y$:n arvo voidaan sijoittaa jompaan kumpaan alkuperäiseen yhtälöön, esimerkiksi yhtälöön $2x=y+5$, ja tästä saadaan ratkaistua myös $x$.
+
+\begin{align*}
+      2x &= -\frac{19}{7}+5\\
+      2x &= \frac{16}{7} \\
+      x &= -\frac{8}{7}
+\end{align*}
+
+Siis yhtälöparin ratkaisu on $x=\frac{8}{7}$ ja $y=-\frac{19}{7}$. Sijoittamalla voidaan tarkistaa, että luvut todellakin toteuttavat molemmat alkuperäiset yhtälö..
+\end{esimerkki}
+
+\begin{esimerkki}
+Määritä suorien $-2x-y= 4$ ja $3x-2y=1$ leikkauspiste.
+\begin{esimratk}
+Saadaan ratkaistavaksi yhtälöpari
+\[
+\left\{
+\begin{aligned}
+-2x-y&= 4 \\
+3x-2y&= 1.
+\end{aligned}
+\right.
+\]
+Käytetään \termi{yhteenlaskumenetelmä}{yhteenlaskumenetelmää}, jolla voidaan eliminoida toinen tuntemattomista.
+\begin{align*}
+  &\left\{
+    \begin{aligned}
+    2x-y&= 4 && \ppalkki \cdot 3\\
+    3x-2y&= 1 && \ppalkki \cdot (-2)
+    \end{aligned}
+  \right. \\
+  &\left\{
+    \begin{aligned}
+    6x-3y&= 12 && \ppalkki \text{Lasketaan yhtälöt yhteen.}\\
+    -6x+4y&= -2.&&
+    \end{aligned}
+  \right.\\
+  &y= 10 \\
+\end{align*}
+Sijoitetaan $y=10$ jompaan kumpaan alkuperäisistä yhtälöistä, jotta saadaan ratkaistua $x$. Käytetään vaikkapa yhtälöä $3x-2y=1$:
+\begin{align*}
+3x-2y&=1 && \ppalkki \text{Sijoitetaan $x=10$.} \\
+3x-20&=1 && \\
+3x&=21 && \\
+x&=7 &&.
+\end{align*}
+\end{esimratk}
+\begin{esimvast}
+Yhtälön ratkaisu on $x=7$, $y=10$.
+\end{esimvast}
+\end{esimerkki}
+
+%EDELLISEN ESIMERKIN ULKOASUA PITÄÄ VIELÄ MUOKATA. TASAUKSET EIVÄT TOIMI JA LISÄKSI YHTÄLÖPARIN ALLE PITÄISI SUMMAUKSEN KOHDALLA SAADA VIIVA. SAMA ONGELMA MYÖHEMMISSÄ ESIMERKEISSÄ.
+
+\subsection*{Yhtälöparin ratkaisujen määrä ja geometrinen tulkinta}
+
+Aiemmin on todettu, että normaalimuotoinen ensimmäisen asteen yhtälö voidaan tulkita suorana
+$xy$-tasossa. Näin ollen lineaariselle yhtälöparille on geometrinen tulkinta: yhtälöparin
+ratkaisut ovat ne tason pisteet, jotka toteuttavat  molempien suorien yhtälöt
+eli ne pisteet, joissa yhtälöitä vastaavat suorat leikkaavat.
+Näitä voi olla $0$ (suorat ovat yhdensuuntaiset, mutta eivät sama suora),
+$1$ (suorat eivät ole yhdensuuntaiset) tai äärettömän monta (suorat ovat sama
+suora).
+
+\laatikko{Yhtälöparilla on 0, 1 tai äärettömän monta ratkaisua.}
+
+Tarkastellaan esimerkkiä yhtälöryhmästä, jolla ei ole lainkaan ratkaisuja.
+
+\begin{esimerkki}
+Ratkaise yhtälöpari
+\[
+\left\{
+\begin{aligned}
+x-2y&= 1 \\
+5x-10y&= 2.
+\end{aligned}
+\right.
+\]
+\begin{esimratk}
+Käytetään yhteenlaskumenetelmää:
+\begin{align*}
+&\left\{
+\begin{aligned}
+-x+2y&= 1 && \ppalkki \cdot 5 \\
+5x-10y&= 2. &&
+\end{aligned}
+\right. \\
+&\left\{
+\begin{aligned}
+-5x-10y&= 5 && \ppalkki \cdot \text{Lasketaan yhtälöt yhteen.} \\
+5x-10y&= 2. &&
+\end{aligned}
+\right. \\
+&0=7 \\
+\end{align*}
+Koska päädytään mahdottomaan yhtälöön, yhtälöparilla ei ole ratkaisua.
+\end{esimratk}
+\begin{esimvast}
+Yhtälöparilla ei ole ratkaisua.
+\end{esimvast}
+\end{esimerkki}
+
+Edellisessä esimerkissä yhtälöryhmällä ei ollut lainkaan ratkaisuja. Geometrisesti tämä tarkoittaa sitä, että suorilla $x-2y= 1$ ja $5x-10y= 2$ ei ole leikkauspisteitä. Ne ovat siis yhdensuuntaiset.
+Tämä voi nähdä myös kirjoittamalla suorien yhtälöt muodossa
+\begin{align*}
+  x-2y &= 1 \\
+  2y &= x - 1 \\
+  y &= \frac{1}{2}x -1
+\end{align*}
+ja
+\begin{align*}
+  5x-10y &= 2 \\
+  10y &= 5x -2 \\
+  y &= \frac{1}{2}x - \frac{1}{5},
+\end{align*}
+josta nähdään että suorien kulmakertoimet ovat samat.
+
+TÄHÄN KUVA?
+
+Tutkitaan vielä yhtälöparia, jolla on äärettömän monta ratkaisua.
+
+\begin{esimerkki}
+Ratkaise yhtälöpari
+\[
+\left\{
+\begin{aligned}
+-3x+y&= -1 \\
+6x-2y&= 2.
+\end{aligned}
+\right.
+\]
+\begin{esimratk}
+Käytetään sijoitusmenetelmää. Ensimmäisestä yhtälöstä saadaan $y=3x-1$. Sijoitetaan tämä toiseen yhtälöön:
+\begin{align*}
+6x-2y&= 2 && \ppalkki \text{sijoitetaan $y=3x-1$} \\
+6x-2(3x-1)&= 2 && \\
+6x-6x+2&= 2 && \\
+2&= 2. &&
+\end{align*}
+\end{esimratk}
+Näin saadusta yhtälöstä $2=2$ ei voikaan ratkaista tuntematonta $x$ niin kuin oli tarkoitus. Yhtälö ei anna mitään lisätietoa tuntemattomista. Tämä johtuu siitä, että alkuperäiset yhtälöt $-3x+y= -1$ ja $6x-2y= 2$ ovat yhtäpitäviä. Ensimmäisestä saadaan jälkimmäinen kertomalla luvulla $-2$.
+
+Oleellisesti tarkasteltavana onkin vain yksi yhtälö, $-3x+y= -1$. Yhtälöparin ratkaisuja ovat kaikki ne luvut $x$ ja $y$, jotka toteuttavat tämän yhtälön. Ratkaisuja ovat esimerkiksi $x=0$, $y=-1$ ja $x=1$, $y=2$. Ratkaisuja on äärettömän monta.
+\begin{esimvast}
+Ratkaisuja on äärettömän monta.
+\end{esimvast}
+\end{esimerkki}
+
+Edellisessä esimerkissä yhtälöparilla oli äärettömän monta ratkaisua. Geometrisesti tämä tarkoittaa sitä, että yhtälöt $-3x+y= -1$ ja $6x-2y= 2$ ovat saman suoran yhtälö. Siten kaikki suoralla $-3x+y= -1$ (tai yhtä hyvin suoralla $6x-2y= 2$) olevat pisteet toteuttavat yhtälöparin.
+
+
+
+\subsection*{Useamman kuin kahden yhtälön yhtälöryhmät}
+
+Kun ratkaistavia yhtälöitä voi olla useampia kuin kaksi, puhutaan yleisesti \termi{yhtälöryhmä}{yhtälöryhmästä}. Yhtälöpari on yhtälöryhmän erikoistapaus. \footnote{Joskus myös yhtälöparia kutsutaan yhtälöryhmäksi, kun ei haluta korostaa yhtlöiden lukumäärää.}
+
+Tässä tarkastellaan lähinnä kolmen yhtälön lineaarisia yhtälöryhmiä. Tätä useamman yhtälön
+lineaarisista yhtälöryhmistä esitetään joitakin helppoja esimerkkejä. 
+
+Tähän asti esimerkeissä on käsitelty yhtälöryhmiä, joissa muuttujia on ollut yhtä monta kuin yhtälöitä, mutta yhtälöitä ja muuttujia voi olla myös eri määrä, mikä vaikuttaa yhtälöryhmän mahdollisten ratkaisujen lukumäärään. Niiden välinen yhteys voidaan ilmaista lauseena, jota voi pitää aikaisemman yhtälöparien ratkaisujen määrää koskevan lauseen yleistyksenä:
+
+\laatikko{Jos lineaarisessa yhtälöryhmässä on vähemmän tai yhtä paljon muuttujia kuin yhtälöitä,
+  yhtälöryhmällä voi olla 0, 1 tai äärettömän monta ratkaisua.
+
+  Jos muuttujia on enemmän kuin yhtälöitä, ratkaisuja on 0 tai äärettömän monta.
+}
+Tähän ja muihin mielenkiintoisiin lineaaristen yhtälöiden ominaisuuksiin tutustutaan tarkemmin tyypillisesti korkeakoulumatematiikassa lineaarialgebran kurssilla.
+
+Lineaarisilla yhtälöryhmillä on paljon käyttöä soveltavassa matematiikassa. Käytännön sovelluksissa voidaan joutua käsittelemään hyvinkin suuria monen muuttujan yhtälöryhmiä, joten yleisesti ottaen yhtälöryhmiä ei käytännössä ratkaista tällä kurssilla esitetyin keinoin, vaan likimääräisesti tietokoneella käyttäen numeerista matriisilaskentaa.
+%LISÄMATERIAALEIHIN MAININTA, ESITTELY? Soveltava kurssi, Vapaa Matikka MaaN.N.: Lukion lineaarialgebraa?
+
+
+\begin{esimerkki}
+Ratkaise lineaarinen yhtälöryhmä
+\[
+\left\{
+\begin{aligned}
+4x+2y+5z&=0 \\
+6x-3y-z&= 23 \\
+x-2y+3z&= -1.
+\end{aligned}
+\right.
+\]
+\begin{esimratk}
+Käytetään yhteenlaskumenetelmää kahteen ylimpään yhtälöön ja eliminoidaan niistä tuntematon $x$:
+\begin{align*}
+&\left\{
+\begin{aligned}
+4x+2y+5z&=0 && \ppalkki \cdot 3 \\
+6x-3y-z&= 23 && \ppalkki \cdot (-2) \\
+\end{aligned}
+\right. \\
+&\left\{
+\begin{aligned}
+12x+6y+15z&=0 \\
+-12x+6y+2z&= -46 \\
+\end{aligned}
+\right. \\
+&12y+17z=-46 \\
+\end{align*}
+
+Tehdään sitten sama toiselle ja kolmannelle yhtälölle:
+\begin{align*}
+&\left\{
+\begin{aligned}
+6x-3y-z&= 23 && \\
+x-2y+3z&= -1 && \ppalkki \cdot (-6)
+\end{aligned}
+\right. \\
+&\left\{
+\begin{aligned}
+6x-3y-z&= 23 \\
+-6x+12y-18z&=6
+\end{aligned}
+\right. \\
+&9y-19z=29. \\
+\end{align*}
+
+Nyt on saatu kaksi yhtälöä, joissa ei ole tuntematonta $x$. Ratkaistaan näin muodostuva yhtälöpari:
+\begin{align*}
+&\left\{
+\begin{aligned}
+12y+17z&=-46 && \ppalkki \cdot 3 \\
+9y-19z&=29 && \ppalkki \cdot (-4) \\
+\end{aligned}
+\right. \\
+&\left\{
+\begin{aligned}
+36y+51z&=-138  \\
+-36y+76z&=-116  \\
+\end{aligned}
+\right. \\
+&127z=-254 \\
+&z=-2 \\
+\end{align*}
+
+Nyt tiedetään, että $z=-2$. Sijoitetaan tämä aiemmin saatuun kahden tuntemattoman yhtälöön $12y+17z=-46$:
+\begin{align*}
+12y+17z&=-46 && \ppalkki \text{Sijoitetaan $z=-2$.} \\
+12y-34&=-46 && \\
+12y&=-12 && \\
+y&=-1 && \\
+\end{align*}
+
+Lopuksi sijoitetaan $y=-1$ ja $z=-2$ johonkin alkuperäisistä yhtälöistä, vaikkapa ensimmäiseen yhtälöön:
+\begin{align*}
+4x+2y+5z&=0 && \ppalkki \text{Sijoitetaan $y=-1$ ja $z=-2$.} \\
+4x-2-10&=0 && \\
+4x&=12 && \\
+x&=3 && \\
+\end{align*}
+
+Nyt on siis saatu ratkaisu $x=3$, $y=-1$, $z=-2$. Tarkistetaan vielä, että nämä luvut tosiaankin toteuttavat kaikki alkuperäisen yhtälöryhmän
+\[
+\left\{
+\begin{aligned}
+4x+2y+5z&=0 \\
+6x-3y-z&= 23 \\
+x-2y+3z&= -1.
+\end{aligned}
+\right.
+\]
+yhtälöt. Tämä tehdään sijoittamalla luvut yhtälöiden vasemmalle puolella ja tarkistamalla, että tulos täsmää yhtälön oikean puolen kanssa.
+
+Koska $4 \cdot 3+2\cdot(-1)+5\cdot(-2)=12-2-10=0$, ne toteuttavat ensimmäisen yhtälöistä. Samalla tavalla $6 \cdot 3-3\cdot(-1)-\cdot(-2)=18+3+2=23$, joten luvut toteuttavat myös toisen yhtälön. Lopuksi todetaan, että $3-2\cdot(-1)+3\cdot(-2)=3+2-6=0-1$, ja siten kolmaskin yhtälöistä toteutuu.
+
+\end{esimratk}
+\begin{esimvast}
+Yhtälöryhmän ratkaisu on $x=3$, $y=-1$, $z=-2$.
+\end{esimvast}
+\end{esimerkki}
